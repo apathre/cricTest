@@ -9,10 +9,6 @@ const cors=require('cors')({origin:true});
 const bodyParser = require('body-parser');
 const app = express();
 
-app.use(cors);
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
 
 //Defining match variables
 const createUser=require('./routes/createUser');
