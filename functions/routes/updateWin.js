@@ -11,7 +11,7 @@ exports.post=(req,res)=>{
         messenger_id:req.body['messenger user id']
     }
 
-    let userRef = db.collection('users').doc(data);
+    let userRef = db.collection('users').doc(`${data.messenger_id}`);
     let transaction = db.runTransaction(t => {
     return t.get(userRef)
         .then(doc => {
