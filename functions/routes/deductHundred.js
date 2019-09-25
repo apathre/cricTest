@@ -6,7 +6,7 @@ let db=admin.firestore();
 exports.post=(req,res)=>{
     console.log('touched deduct hundred');
     var coin=100;
-    var tResult='';
+    var tResult='failed';
     let data={
         messenger_id:req.body['messenger user id']
     }

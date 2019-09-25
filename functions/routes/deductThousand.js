@@ -5,7 +5,7 @@ let db=admin.firestore();
 
 exports.post=(req,res)=>{
     var coin=1000;
-    var tResult='';
+    var tResult='failed';
     let data={
         messenger_id:req.body['messenger user id']
     }
