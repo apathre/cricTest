@@ -4,6 +4,7 @@ const functions=require('firebase-functions');
 let db=admin.firestore();
 
 exports.post=(req,res)=>{
+    console.log('touched deduct hundred');
     var coin=100;
     var tResult='';
     let data={
