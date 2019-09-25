@@ -1,3 +1,8 @@
+const admin=require('firebase-admin');
+const functions=require('firebase-functions');
+
+let db=admin.firestore();
+
 exports.post=(req,res)=>{
 
     console.log('touched add Coin');
