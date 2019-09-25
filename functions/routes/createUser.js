@@ -10,7 +10,7 @@ exports.post=(req,res)=>{
         "messenger_id":req.body['messenger user id'],
         "first_name":req.body['first name'],
         "last_name":req.body['last name'],
-        "gender":req.body['last name'],
+        "gender":req.body['gender'],
         "signed_up":req.body['signed up'],
         "last_seen":req.body['last seen'],
         "game_number":0,

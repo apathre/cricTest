@@ -20,6 +20,7 @@ const deductThousand=require('./routes/deductThousand');
 const updateWin=require('./routes/updateWin');
 const updateDraw=require('./routes/batting/updateDraw');
 const addCoins=require('./routes/addCoins');
+const updateRatio=require('./routes/updateRatio');
 
 //Defining batting variables
 const allocateTeam=require('./routes/allocateTeam.js');
@@ -53,6 +54,7 @@ app.post('/deductThousand',deductThousand.post);
 app.post('/updateWin',updateWin.post);
 app.post('/updateDraw',updateDraw.post);
 app.post('/addCoins',addCoins.post);
+app.post('/updateRatio',updateRatio.post);
 
 //routes batting
 app.post('/allocateTeam',allocateTeam.post);
