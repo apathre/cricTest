@@ -1,4 +1,4 @@
-const fns=require('./../Data/shotMatrix');
+const fns=require('../../Data/shotMatrix');
 
 
 exports.post=(req,res)=>{

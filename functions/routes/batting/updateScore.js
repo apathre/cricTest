@@ -1,4 +1,4 @@
-const fns=require('./../Data/shotMatrix');
+const fns=require('../../Data/shotMatrix');
 //variable declaration
 var strike,bowling,shot,bStyle,runs;
 

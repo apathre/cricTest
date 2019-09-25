@@ -1,4 +1,4 @@
-const fns=require('./../Data/shotMatrix');
+const fns=require('../../Data/shotMatrix');
 exports.post=(req,res)=>{
   var infoText,p1_status,p2_status,p3_status;
   var {runs,up1_status,up2_status,up3_status,ball}=req.body;

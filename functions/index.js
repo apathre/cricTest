@@ -18,17 +18,17 @@ const checkWinner=require('./routes/checkWinner');
 const deductHundred=require('./routes/deductHundred');
 const deductThousand=require('./routes/deductThousand');
 const updateWin=require('./routes/updateWin');
-const updateDraw=require('./routes/updateDraw');
+const updateDraw=require('./routes/batting/updateDraw');
 
 //Defining batting variables
 const allocateTeam=require('./routes/allocateTeam.js');
-const updateScore=require('./routes/updateScore');
-const updateConfidence=require('./routes/updateConfidence');
-const initializeAttributes=require('./routes/initializeAttributes');
-const updateStatus=require('./routes/updateStatus');
-const checkBatting=require('./routes/checkBatting');
-const checkPlayers=require('./routes/checkPlayers');
-const chooseOpener=require('./routes/chooseOpener');
+const updateScore=require('./routes/batting/updateScore');
+const updateConfidence=require('./routes/batting/updateConfidence');
+const initializeAttributes=require('./routes/batting/initializeAttributes');
+const updateStatus=require('./routes/batting/updateStatus');
+const checkBatting=require('./routes/batting/checkBatting');
+const checkPlayers=require('./routes/batting/checkPlayers');
+const chooseOpener=require('./routes/batting/chooseOpener');
 
 //Defining bowling variables
 const allocateBTeam=require('./routesBowling/allocateBTeam');
