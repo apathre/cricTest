@@ -19,16 +19,22 @@ exports.post=(req,res)=>{
     }).then(result => {
     console.log('Transaction success1000', result);
     tResult='success';
-    return 0;
-    }).catch(err => {
-    console.log('Transaction failure1000:', err);
-    tResult='failed';
-    });
- });
-
     res.send({
         "set_attributes":{
             "deducted1000":tResult
         }
     });
+    return 0;
+    }).catch(err => {
+    console.log('Transaction failure1000:', err);
+    tResult='failed';
+    res.send({
+        "set_attributes":{
+            "deducted1000":tResult
+        }
+    });
+    });
+ });
+
+    
 }
