@@ -22,13 +22,6 @@ exports.post=(req,res)=>{
     }).then(result => {
     console.log('Update Wins success');
     tResult='success';
-    res.send({
-        "messages":[
-        {
-            "text":"Wins updated!!"
-        }
-        ]
-    });
     return 0;
     }).catch(err => {
     console.log('update wins failure:', err);
@@ -36,5 +29,11 @@ exports.post=(req,res)=>{
     });
  });
 
-    
+ res.send({
+    "messages":[
+            {
+                "text":"Wins updated!!"
+            }
+        ]
+    });
 }
