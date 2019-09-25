@@ -19,7 +19,7 @@ exports.post=(req,res)=>{
         "compWins":0,
         "winRatio":0
         }
-    let docRef = db.collection('users').doc(data.messenger_id);
+    let docRef = db.collection('users').doc(`${data.messenger_id}`);
 
     let setAda = docRef.set(data);
   
