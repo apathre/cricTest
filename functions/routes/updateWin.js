@@ -7,8 +7,11 @@ exports.post=(req,res)=>{
     var bet=req.body.bet;
     var tResult='';
     var multiple=1.8;
+    let data={
+        messenger_id:req.body['messenger user id']
+    }
 
-    let userRef = db.collection('users').doc(req.body['messenger user id']);
+    let userRef = db.collection('users').doc(data);
     let transaction = db.runTransaction(t => {
     return t.get(userRef)
         .then(doc => {

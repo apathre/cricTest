@@ -6,7 +6,10 @@ let db=admin.firestore();
 exports.post=(req,res)=>{
     var coin=100;
     var tResult='';
-    let userRef = db.collection('users').doc(req.body['messenger user id']);
+    let data={
+        messenger_id:req.body['messenger user id']
+    };
+    let userRef = db.collection('users').doc(data.messenger_id);
     let transaction = db.runTransaction(t => {
     return t.get(userRef)
         .then(doc => {
