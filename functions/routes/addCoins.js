@@ -1,6 +1,6 @@
 exports.post=(req,res)=>{
 
-    console.log('touched deduct hundred');
+    console.log('touched add Coin');
     var coin=1000;
     var tResult='failed';
     let data={
@@ -25,7 +25,7 @@ exports.post=(req,res)=>{
 
     res.send({
         "messages":[
-        {"text":"Coins added"}
+        {"text":"Coins added 1000"}
         ]
     });
 }
