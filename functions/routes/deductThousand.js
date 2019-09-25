@@ -17,11 +17,11 @@ exports.post=(req,res)=>{
             t.update(userRef, {coins: newCoins});
             return 0;
     }).then(result => {
-    console.log('Transaction success', result);
+    console.log('Transaction success1000', result);
     tResult='success';
     return 0;
     }).catch(err => {
-    console.log('Transaction failure:', err);
+    console.log('Transaction failure1000:', err);
     tResult='failed';
     });
  });
