@@ -15,8 +15,8 @@ exports.post=(req,res)=>{
     let transaction = db.runTransaction(t => {
     return t.get(userRef)
         .then(doc => {
-        let newUserWins = req.body['userWins'];
-        let newCompWins=req.body['compWins'];
+        let newUserWins = req.body.userWins;
+        let newCompWins=req.body.compWins;
             t.update(userRef, {userWins:newUserWins, compWins:newCompWins});
             return 0;
     }).then(result => {
