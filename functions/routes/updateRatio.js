@@ -17,7 +17,8 @@ exports.post=(req,res)=>{
         .then(doc => {
         let newUserWins = req.body.userWins;
         let newCompWins=req.body.compWins;
-            t.update(userRef, {userWins:newUserWins, compWins:newCompWins});
+        let newRatio=parseInt(newUserWins)/parseInt(newCompWins);
+            t.update(userRef, {userWins:newUserWins, compWins:newCompWins, winRatio:newRatio});
             return 0;
     }).then(result => {
     console.log('Update Wins success');
