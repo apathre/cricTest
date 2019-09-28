@@ -15,7 +15,7 @@ exports.post=(req,res)=>{
    cb1_lecon,cb1_recon,
    cb2_lecon,cb2_recon,
    cb1_status,cb2_status,
-   shotType }=req.body;
+   shotType,pitch_type }=req.body;
   
 
   if(up1_status==='strike'){
@@ -61,17 +61,17 @@ exports.post=(req,res)=>{
       
       conf=parseInt(conf);
       switch(matrixRes){
-        case 0:runs=fns.strongAir(conf);
+        case 0:runs=fns.strongAir(conf,pitch_type);
         break;
-        case 1:runs=fns.strongGround(conf);
+        case 1:runs=fns.strongGround(conf,pitch_type);
         break;
-        case 2:runs=fns.strongDefence(conf);
+        case 2:runs=fns.strongDefence(conf,pitch_type);
         break;
-        case 3:runs=fns.weakAir(conf);
+        case 3:runs=fns.weakAir(conf,pitch_type);
         break;
-        case 4:runs=fns.weakGround(conf);
+        case 4:runs=fns.weakGround(conf,pitch_type);
         break;
-        case 5:runs=fns.weakDefence(conf);
+        case 5:runs=fns.weakDefence(conf,pitch_type);
         break;
         default:console.log('error in matrixRes');
         break;

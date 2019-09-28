@@ -68,9 +68,10 @@ exports.shot=[
   ]
   
   
-  exports.strongAir=(conf)=>{
-    
-    var run=(conf>=0&&conf<=25)?10:
+  exports.strongAir=(conf,pitch)=>{
+  var run=0;
+    if(pitch==='dead'){ 
+        run=(conf>=0&&conf<=25)?10:
             (conf>25&&conf<=40)?1:
             (conf>40&&conf<=43)?10:
             (conf>43&&conf<=65)?2:
@@ -80,40 +81,146 @@ exports.shot=[
             (conf>93&&conf<=98)?6:
             (conf>98&&conf<=99)?10:
             (conf===100)?6*Math.round(Math.random()):11;
+    }
+    else if(pitch==='green'){
+      run=(conf>=0&&conf<=25)?10:
+      (conf>25&&conf<=40)?1:
+      (conf>40&&conf<=43)?10:
+      (conf>43&&conf<=65)?2:
+      (conf>65&&conf<=68)?10:
+      (conf>70&&conf<=90)?4:
+      (conf>90&&conf<=93)?10:
+      (conf>93&&conf<=98)?6:
+      (conf>98&&conf<=99)?10:
+      (conf===100)?6*Math.round(Math.random()):11;
+
+    }
+    else{                                                   //pitch is damp
+      run=(conf>=0&&conf<=25)?10:
+            (conf>25&&conf<=40)?1:
+            (conf>40&&conf<=43)?10:
+            (conf>43&&conf<=65)?2:
+            (conf>65&&conf<=68)?10:
+            (conf>70&&conf<=90)?4:
+            (conf>90&&conf<=93)?10:
+            (conf>93&&conf<=98)?6:
+            (conf>98&&conf<=99)?10:
+            (conf===100)?6*Math.round(Math.random()):11;
+
+    }
     return run;
   }
-  exports.strongGround=(conf)=>{
-    var run=(conf>=0&&conf<=10)?0:
+  exports.strongGround=(conf,pitch)=>{
+    var run=0;
+      if(pitch==='dead'){
+        run=(conf>=0&&conf<=10)?0:
             (conf>10&&conf<=35)?1:
             (conf>35&&conf<=60)?2:
             (conf>60&&conf<=65)?11:
             (conf>65&&conf<=80)?3:
             (conf>80&&conf<=82)?11:4*Math.round(Math.random());
+      }
+      else if(pitch==='green'){
+        run=(conf>=0&&conf<=10)?0:
+            (conf>10&&conf<=35)?1:
+            (conf>35&&conf<=60)?2:
+            (conf>60&&conf<=65)?11:
+            (conf>65&&conf<=80)?3:
+            (conf>80&&conf<=82)?11:4*Math.round(Math.random());
+      }
+      else{
+        run=(conf>=0&&conf<=10)?0:
+            (conf>10&&conf<=35)?1:
+            (conf>35&&conf<=60)?2:
+            (conf>60&&conf<=65)?11:
+            (conf>65&&conf<=80)?3:
+            (conf>80&&conf<=82)?11:4*Math.round(Math.random());
+
+      }
     return run;
   }
-  exports.strongDefence=(conf)=>{
-    var run=(conf>=0&&conf<=10)?0:
+  exports.strongDefence=(conf,pitch)=>{
+    var run=0;
+    if(pitch==='dead'){
+        run=(conf>=0&&conf<=10)?0:
             (conf>10&&conf<=25)?0:
             (conf>25&&conf<=70)?0:1;
+    }
+    else if(pitch==='green'){
+      run=(conf>=0&&conf<=10)?0:
+            (conf>10&&conf<=25)?0:
+            (conf>25&&conf<=70)?0:1;
+
+    }
+    else{
+      run=(conf>=0&&conf<=10)?0:
+            (conf>10&&conf<=25)?0:
+            (conf>25&&conf<=70)?0:1;
+
+    }
     return run;
   }
-  exports.weakAir=(conf)=>{
-    var run=(conf>=0&&conf<=5)?1:
+  exports.weakAir=(conf,pitch)=>{
+    var run=0;
+    if(pitch==='dead'){
+        run=(conf>=0&&conf<=5)?1:
             (conf>5&&conf<=15)?2:
             (conf>15&&conf<=30)?3:
             (conf>30&&conf<=65)?4:6;
+    }
+    else if(pitch==='green'){
+      run=(conf>=0&&conf<=5)?1:
+            (conf>5&&conf<=15)?2:
+            (conf>15&&conf<=30)?3:
+            (conf>30&&conf<=65)?4:6;
+
+    }
+    else{
+      run=(conf>=0&&conf<=5)?1:
+            (conf>5&&conf<=15)?2:
+            (conf>15&&conf<=30)?3:
+            (conf>30&&conf<=65)?4:6;
+
+    }
     return run;
   }
-  exports.weakGround=(conf)=>{
-   var run=(conf>=0&&conf<=25)?1:
+  exports.weakGround=(conf,pitch)=>{
+    var run=0;
+    if(pitch==='dead'){
+        run=(conf>=0&&conf<=25)?1:
             (conf>25&&conf<=45)?2:
             (conf>45&&conf<=48)?11:
             (conf>50&&conf<=80)?3:4;
+    }
+    else if(pitch==='green'){
+      run=(conf>=0&&conf<=25)?1:
+            (conf>25&&conf<=45)?2:
+            (conf>45&&conf<=48)?11:
+            (conf>50&&conf<=80)?3:4;
+
+    }
+    else{
+      run=(conf>=0&&conf<=25)?1:
+            (conf>25&&conf<=45)?2:
+            (conf>45&&conf<=48)?11:
+            (conf>50&&conf<=80)?3:4;
+    }
     return run;
   }
-  exports.weakDefence=(conf)=>{
-    var run=(conf>=0&&conf<=2)?0:
+  exports.weakDefence=(conf,pitch)=>{
+    var run=0;
+    if(pitch==='dead'){
+        run=(conf>=0&&conf<=2)?0:
             (conf>2&&conf<=65)?1:2;
+    }
+    else if(pitch==='green'){
+      run=(conf>=0&&conf<=2)?0:
+            (conf>2&&conf<=65)?1:2;
+    }
+    else{
+      run=(conf>=0&&conf<=2)?0:
+            (conf>2&&conf<=65)?1:2;
+    }
     return run;
   }
   

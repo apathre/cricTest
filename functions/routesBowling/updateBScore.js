@@ -15,7 +15,7 @@ exports.post=(req,res)=>{
    ub1_lecon,ub1_recon,
    ub2_lecon,ub2_recon,
    ub1_status,ub2_status,
-   fieldType }=req.body;
+   fieldType,pitch_type }=req.body;
   
 
   if(cp1_status==='strike'){
@@ -61,17 +61,17 @@ exports.post=(req,res)=>{
       
       
       switch(matrixRes){
-        case 0:runs=fns.strongAir(conf);
+        case 0:runs=fns.strongAir(conf,pitch_type);
         break;
-        case 1:runs=fns.strongGround(conf);
+        case 1:runs=fns.strongGround(conf,pitch_type);
         break;
-        case 2:runs=fns.strongDefence(conf);
+        case 2:runs=fns.strongDefence(conf,pitch_type);
         break;
-        case 3:runs=fns.weakAir(conf);
+        case 3:runs=fns.weakAir(conf,pitch_type);
         break;
-        case 4:runs=fns.weakGround(conf);
+        case 4:runs=fns.weakGround(conf,pitch_type);
         break;
-        case 5:runs=fns.weakDefence(conf);
+        case 5:runs=fns.weakDefence(conf,pitch_type);
         break;
         default:runs=10;
         break;
