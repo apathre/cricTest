@@ -16,7 +16,7 @@ exports.post=(req,res)=>{
     if(pitch_type==='dead'){
         multiple=1.4;
     }
-    else if(pitch==='green'){
+    else if(pitch_type==='green'){
         multiple=1.6;
     }
     else{
