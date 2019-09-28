@@ -33,22 +33,23 @@ exports.post=(req,res)=>{
     }).then(result => {
     console.log('Transaction success', result);
     tResult='success';
-    res.send({
-        "set_attributes":{
-            "updatedWin":tResult
-        },
-        "messages":[
-            {
-                "text":`Coin Balance increased 💰💰 \nCurrent Coins: ${newCoins}`
-            }
-        ]
-    });
     return 0;
     }).catch(err => {
     console.log('Transaction failure:', err);
     tResult='failed';
     });
  });
+        res.send({
+            "set_attributes":{
+                "updatedWin":tResult,
+                "coins":newCoins
+            },
+            "messages":[
+                {
+                    "text":`Coin Balance increased 💰💰 \nCurrent Coins: ${newCoins}`
+                }
+            ]
+        });
 
     
 }
