@@ -36,7 +36,7 @@ exports.post=(req,res)=>{
     return 0;
     }).catch(err => {
     console.log('Transaction failure:', err);
-    tResult='failed';
+    tResult='failed-1';
     });
  });
         res.send({
