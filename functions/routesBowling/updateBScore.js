@@ -77,7 +77,7 @@ exports.post=(req,res)=>{
         default:runs=10;
         break;
       }
-     
+      
      //text message to be displayed
      switch(runs){
        case 0:text=fns.scoreMessage0[sms.random(9,0)].text;
