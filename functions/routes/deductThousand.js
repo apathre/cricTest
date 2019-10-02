@@ -21,7 +21,8 @@ exports.post=(req,res)=>{
     tResult='success';
     res.send({
         "set_attributes":{
-            "deducted1000":tResult
+            "deducted1000":tResult,
+            "coins":newCoins
         }
     });
     return 0;
@@ -30,7 +31,8 @@ exports.post=(req,res)=>{
     tResult='failed';
     res.send({
         "set_attributes":{
-            "deducted1000":tResult
+            "deducted1000":tResult,
+            "coins":newCoins
         }
     });
     });
