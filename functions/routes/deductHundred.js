@@ -6,6 +6,7 @@ let db=admin.firestore();
 exports.post=(req,res)=>{
     console.log('touched deduct hundred');
     var coin=100;
+    var newCoins=0;
     var tResult='failed';
     let data={
         messenger_id:req.body['messenger user id']
@@ -14,7 +15,7 @@ exports.post=(req,res)=>{
     let transaction = db.runTransaction(t => {
     return t.get(userRef)
         .then(doc => {
-        let newCoins = doc.data().coins - coin;
+         newCoins = doc.data().coins - coin;
             t.update(userRef, {coins: newCoins});
             return 0;
     }).then(result => {
