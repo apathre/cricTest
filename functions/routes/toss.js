@@ -1,4 +1,5 @@
 const fns=require('./../Data/shotMatrix');
+const sms=require('./../Data/random');
 
 exports.post=(req,res)=>{
   var tossRes=Math.round(Math.random());
@@ -20,7 +21,7 @@ exports.post=(req,res)=>{
                         "attachment": {
                         "type": "image",
                         "payload": {
-                                     "url": tossArr[fns.random(1,0)]
+                                     "url": tossArr[sms.random(1,0)]
                                    }
                              }
                         },
@@ -41,7 +42,7 @@ exports.post=(req,res)=>{
                         "attachment": {
                         "type": "image",
                         "payload": {
-                                     "url": tossArr[fns.random(1,0)]
+                                     "url": tossArr[sms.random(1,0)]
                                    }
                              }
                         },

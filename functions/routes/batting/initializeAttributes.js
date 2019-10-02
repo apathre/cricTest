@@ -1,4 +1,5 @@
 const fns=require('../../Data/shotMatrix');
+const sms=require('../../Data/random');
 
 
 exports.post=(req,res)=>{
@@ -11,7 +12,7 @@ exports.post=(req,res)=>{
         up1_sRate=fns.batsman[i].sRate;
         up1_fRate=fns.batsman[i].fRate; 
         up1_runs=0;
-        up1_conf=fns.random(25,0);
+        up1_conf=sms.random(25,0);
         up1_img=fns.batsman[i].img;
      }
      if(fns.batsman[i].name===up2){
@@ -19,7 +20,7 @@ exports.post=(req,res)=>{
         up2_sRate=fns.batsman[i].sRate;
         up2_fRate=fns.batsman[i].fRate;
         up2_runs=0;
-        up2_conf=fns.random(25,0);
+        up2_conf=sms.random(25,0);
         up2_img=fns.batsman[i].img;
 
      }
@@ -28,7 +29,7 @@ exports.post=(req,res)=>{
         up3_sRate=fns.batsman[i].sRate;
         up3_fRate=fns.batsman[i].fRate;
         up3_runs=0;
-        up3_conf=fns.random(25,0);
+        up3_conf=sms.random(25,0);
         up3_img=fns.batsman[i].img;
      }
   }

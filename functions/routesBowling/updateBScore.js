@@ -1,4 +1,5 @@
 const fns=require('./../Data/shotMatrix');
+const sms=require('./../Data/random');
 //variable declaration
 var strike,bowling,shotNo,bStyle,runs;
 
@@ -79,21 +80,21 @@ exports.post=(req,res)=>{
      
      //text message to be displayed
      switch(runs){
-       case 0:text=fns.scoreMessage0[fns.random(9,0)].text;
+       case 0:text=fns.scoreMessage0[sms.random(9,0)].text;
         break;
-       case 1:text=fns.scoreMessage1[fns.random(9,0)].text;
+       case 1:text=fns.scoreMessage1[sms.random(9,0)].text;
         break;
-       case 2:text=fns.scoreMessage2[fns.random(9,0)].text;
+       case 2:text=fns.scoreMessage2[sms.random(9,0)].text;
         break;
-       case 3:text=fns.scoreMessage3[fns.random(9,0)].text;
+       case 3:text=fns.scoreMessage3[sms.random(9,0)].text;
         break;
-       case 4:text=fns.scoreMessage4[fns.random(9,0)].text;
+       case 4:text=fns.scoreMessage4[sms.random(9,0)].text;
         break;
-       case 6:text=fns.scoreMessage6[fns.random(9,0)].text;
+       case 6:text=fns.scoreMessage6[sms.random(9,0)].text;
         break;
-       case 10:text=fns.scoreMessage10[fns.random(9,0)].text;
+       case 10:text=fns.scoreMessage10[sms.random(9,0)].text;
         break; //catch out code
-       case 11:text=fns.scoreMessage11[fns.random(2,0)].text;
+       case 11:text=fns.scoreMessage11[sms.random(2,0)].text;
         break; //run out code
        default: text='Thats Out!!';
         break;
@@ -102,8 +103,8 @@ exports.post=(req,res)=>{
   }
   else{
     runs=12; //bowled code
-    text=fns.scoreMessage12[fns.random(7,0)].text;
-    img=fns.scoreImage12[fns.random(4,0)].img;
+    text=fns.scoreMessage12[sms.random(7,0)].text;
+    img=fns.scoreImage12[sms.random(4,0)].img;
   }
   
   res.send({

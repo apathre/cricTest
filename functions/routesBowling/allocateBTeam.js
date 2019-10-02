@@ -1,15 +1,16 @@
 const fns=require('./../Data/shotMatrix');
+const sms=require('./../Data/random');
 
 exports.post=(req,res)=>{
   
-  cp1=fns.batsman[Math.round(fns.random(5,0))].name;
+  cp1=fns.batsman[Math.round(sms.random(5,0))].name;
   
   do{
-    cp2=fns.batsman[Math.round(fns.random(5,0))].name;
+    cp2=fns.batsman[Math.round(sms.random(5,0))].name;
   }while(cp2===cp1);
   
   do{
-      cp3=fns.batsman[Math.round(fns.random(5,0))].name;
+      cp3=fns.batsman[Math.round(sms.random(5,0))].name;
     }while(cp3===cp1||cp3===cp2);
  
   ub1=fns.bowlers[Math.round(Math.random())].name;

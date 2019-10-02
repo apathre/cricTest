@@ -1,3 +1,5 @@
+const fns=require('./random')
+
 exports.shot=[
     [0,1,2],
     [3,4,5]
@@ -5,48 +7,48 @@ exports.shot=[
   
   exports.batsman=[
     {
-      name:"P1",
+      name:"Alex Bailes",
       style:"left-handed",
-      sRate:78,
-      fRate:76,
+      sRate:fns.random(95,70),
+      fRate:fns.random(95,70),
       img:"https://i.ibb.co/VY3rVBv/ipl-player-2-done.jpg"
       
       
     },
     {
-      name:"P2",
+      name:"Ken Stokes",
       style:"right-handed",
-      sRate:83,
-      fRate:88,
+      sRate:fns.random(95,70),
+      fRate:fns.random(95,70),
       img:"https://i.ibb.co/2Zgjs2T/test-batsman-3-done.jpg"
     },
     {
-      name:"P3",
+      name:"Nihar Kohli",
       style:"right-handed",
-      sRate:98,
-      fRate:66,
+      sRate:fns.random(95,70),
+      fRate:fns.random(95,70),
       img:"https://i.ibb.co/GdqJz9T/ipl-player-5-done.jpg"
     },
     {
-      name:"P4",
+      name:"Mukesh Raina",
       style:"left-handed",
-      sRate:91,
-      fRate:86,
+      sRate:fns.random(95,70),
+      fRate:fns.random(95,70),
       img:"https://i.ibb.co/zrLPLsC/ipl-player-3-done.jpg"
   
     },
     {
-      name:"P5",
+      name:"V S Rahul",
       style:"left-handed",
-      sRate:77,
-      fRate:87,
+      sRate:fns.random(95,70),
+      fRate:fns.random(95,70),
       img:"https://i.ibb.co/X4BgWdc/test-batsman-2-done.jpg"
     },
     { 
-      name:"P6",
+      name:"Chetan Gujara",
       style:"right-handed",
-      sRate:76,
-      fRate:76,
+      sRate:fns.random(95,70),
+      fRate:fns.random(95,70),
       img:"https://i.ibb.co/1QG7mqd/test-batsman-1-done.jpg"
     }
     
@@ -54,16 +56,16 @@ exports.shot=[
   
   exports.bowlers=[
     {
-      name:"B1",
+      name:"Vaheer Khan",
       style:"off spin",
-      lecon:76,
-      recon:67
+      lecon:fns.random(95,70),
+      recon:fns.random(95,70)
     },
     {
-      name:"B2",
+      name:"Fakir Hassan",
       style:"leg spin",
-      lecon:74,
-      recon:87
+      lecon:fns.random(95,70),
+      recon:fns.random(95,70)
     }
   ]
   
@@ -224,10 +226,7 @@ exports.shot=[
     return run;
   }
   
-  exports.random=function(max,min){
-    var rd= Math.floor(Math.random()*(max-min+1)+min);
-    return rd;
-  }
+  
   
   exports.hitOrNot=(bStyle,sRate,fRate)=>{
   

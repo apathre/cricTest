@@ -1,4 +1,5 @@
 const fns=require('../../Data/shotMatrix');
+const sms=require('../../Data/random');
 //variable declaration
 var strike,bowling,shot,bStyle,runs;
 
@@ -100,8 +101,8 @@ exports.post=(req,res)=>{
   }
   else{
     runs=12; //bowled code
-    text=fns.scoreMessage12[fns.random(7,0)].text;
-    img=fns.scoreImage12[fns.random(4,0)].img;
+    text=fns.scoreMessage12[sms.random(7,0)].text;
+    img=fns.scoreImage12[sms.random(4,0)].img;
   }
   
   res.send({
