@@ -12,31 +12,40 @@ exports.post=(req,res)=>{
         messenger_id:req.body['messenger user id']
     }
     let userRef = db.collection('users').doc(`${data.messenger_id}`);
-    let transaction = db.runTransaction(t => {
-    return t.get(userRef)
+    let transaction = db.runTransaction(t => (
+        t.get(userRef)
         .then(doc => {
          newCoins = doc.data().coins - coin;
             t.update(userRef, {coins: newCoins});
-            return 0;
-    }).then(result => {
+            res.send({
+                "set_attributes":{
+                    "deducted100":tResult,
+                    "coins":newCoins
+                },
+                "messages":[
+                    {"text":"Coins Update failed!!"}
+                ]
+            });
+            return 0;   
+        }).then(result => {
     console.log('Transaction success100', result);
     tResult='success';
     return 0;
     }).catch(err => {
     console.log('Transaction failure100:', err);
     tResult='failed';
-    });
- });
+    res.send({
+        "set_attributes":{
+            "deducted100":tResult,
+        },
+        "messages":[
+            {"text":"Coins Update failed!!"}
+        ]
+     });
+    })
+ ));
 
- res.send({
-    "set_attributes":{
-        "deducted100":tResult,
-        "coins":newCoins
-    },
-    "messages":[
-        {"text":"Coins Update failed!!"}
-    ]
-});
+ 
 
     
 }
