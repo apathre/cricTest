@@ -62,7 +62,7 @@ exports.shot=[
       recon:fns.random(95,70)
     },
     {
-      name:"Fakir Hassan",
+      name:"Zakir Hassan",
       style:"leg spin",
       lecon:fns.random(95,70),
       recon:fns.random(95,70)
@@ -101,13 +101,13 @@ exports.shot=[
       run=(conf>=0&&conf<=25)?10:
             (conf>25&&conf<=40)?1:
             (conf>40&&conf<=43)?10:
-            (conf>43&&conf<=65)?2:
+            (conf>43&&conf<=65)?1:
             (conf>65&&conf<=68)?10:
-            (conf>70&&conf<=90)?4:
+            (conf>70&&conf<=90)?2:
             (conf>90&&conf<=93)?10:
-            (conf>93&&conf<=98)?6:
+            (conf>93&&conf<=98)?3:
             (conf>98&&conf<=99)?10:
-            (conf===100)?6*Math.round(Math.random()):11;
+            (conf===100)?4*Math.round(Math.random()):11;
 
     }
     return run;
@@ -132,11 +132,11 @@ exports.shot=[
       }
       else{
         run=(conf>=0&&conf<=10)?0:
-            (conf>10&&conf<=35)?1:
-            (conf>35&&conf<=60)?2:
+            (conf>10&&conf<=35)?0:
+            (conf>35&&conf<=60)?1:
             (conf>60&&conf<=65)?11:
-            (conf>65&&conf<=80)?3:
-            (conf>80&&conf<=82)?11:4*Math.round(Math.random());
+            (conf>65&&conf<=80)?2:
+            (conf>80&&conf<=82)?11:3*Math.round(Math.random());
 
       }
     return run;
@@ -144,20 +144,17 @@ exports.shot=[
   exports.strongDefence=(conf,pitch)=>{
     var run=0;
     if(pitch==='dead'){
-        run=(conf>=0&&conf<=10)?0:
-            (conf>10&&conf<=25)?0:
-            (conf>25&&conf<=70)?0:1;
+        run=(conf>=0&&conf<=30)?13:
+            (conf>40&&conf<=50)?14:1;
     }
     else if(pitch==='green'){
-      run=(conf>=0&&conf<=10)?0:
-            (conf>10&&conf<=25)?0:
-            (conf>25&&conf<=70)?0:1;
+      run=(conf>=0&&conf<=30)?13:
+            (conf>30&&conf<=50)?14:1;
 
     }
     else{
-      run=(conf>=0&&conf<=10)?0:
-            (conf>10&&conf<=25)?0:
-            (conf>25&&conf<=70)?0:1;
+      run=(conf>=0&&conf<=30)?13:
+            (conf>30&&conf<=50)?14:1;
 
     }
     return run;
@@ -179,9 +176,9 @@ exports.shot=[
     }
     else{
       run=(conf>=0&&conf<=5)?1:
-            (conf>5&&conf<=15)?2:
-            (conf>15&&conf<=30)?3:
-            (conf>30&&conf<=65)?4:6;
+            (conf>5&&conf<=15)?1:
+            (conf>15&&conf<=30)?2:
+            (conf>30&&conf<=65)?3:4;
 
     }
     return run;
@@ -203,25 +200,25 @@ exports.shot=[
     }
     else{
       run=(conf>=0&&conf<=25)?1:
-            (conf>25&&conf<=45)?2:
+            (conf>25&&conf<=45)?1:
             (conf>45&&conf<=48)?11:
-            (conf>50&&conf<=80)?3:4;
+            (conf>50&&conf<=80)?2:3;
     }
     return run;
   }
   exports.weakDefence=(conf,pitch)=>{
     var run=0;
     if(pitch==='dead'){
-        run=(conf>=0&&conf<=2)?0:
-            (conf>2&&conf<=65)?1:2;
+        run=(conf>=0&&conf<=40)?13:
+            (conf>40&&conf<=65)?1:2;
     }
     else if(pitch==='green'){
-      run=(conf>=0&&conf<=2)?0:
-            (conf>2&&conf<=65)?1:2;
+      run=(conf>=0&&conf<=40)?13:
+            (conf>40&&conf<=65)?1:2;
     }
     else{
-      run=(conf>=0&&conf<=2)?0:
-            (conf>2&&conf<=65)?1:2;
+      run=(conf>=0&&conf<=40)?13:
+            (conf>40&&conf<=65)?1:2;
     }
     return run;
   }
@@ -619,5 +616,31 @@ exports.shot=[
     },
     {
       img:''
+    }
+  ]
+  exports.stadiumImages=[
+    {
+      'img':'https://ibb.co/zmsb1tL',
+      'text':'Wankhede Cricket Stadium, Mumbai'
+    },
+    {
+      'img':'https://ibb.co/DKK0kMG',
+      'text':'DharamShala Cricket Stadium'
+    },
+    {
+      'img':'https://ibb.co/K6XhLC3',
+      'text':'Sharjah Cricket Stadium'
+    },
+    {
+      'img':'https://ibb.co/yg8KsXk',
+      'text':'Mohali Cricket Stadium'
+    },
+    {
+      'img':'https://ibb.co/4ZfFDrx',
+      'text':'Feroz Shah Kotla Cricket Stadium, Delhi'
+    },
+    {
+      'img':'https://ibb.co/JdTnX3k',
+      'text':'Oval Cricket Ground'
     }
   ]

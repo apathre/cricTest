@@ -42,6 +42,9 @@ exports.post=(req,res)=>{
     if((runs===1||runs===3)){
       [p1_status,p2_status,p3_status]=fns.status(cp1_status,cp2_status,cp3_status);
     }
+    if(runs===13||runs===14){
+      runs=0;
+    }
     if(bball%6===0){
        [p1_status,p2_status,p3_status]=fns.status(cp1_status,cp2_status,cp3_status);
     }
