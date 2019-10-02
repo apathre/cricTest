@@ -15,7 +15,7 @@ exports.post=(req,res)=>{
                    "type":"template",
                    "payload":{
                      "template_type":"generic",
-                     "image_aspect_ratio":"rectangle",
+                     "image_aspect_ratio":"square",
                      "elements":[
                        {
                          "title":stadiumText,
