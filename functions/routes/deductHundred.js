@@ -15,7 +15,8 @@ exports.post=(req,res)=>{
     let transaction = db.runTransaction(t => (
         t.get(userRef)
         .then(doc => {
-         newCoins = doc.data().coins - coin;
+            tResult='success';
+            newCoins = doc.data().coins - coin;
             t.update(userRef, {coins: newCoins});
             res.send({
                 "set_attributes":{
