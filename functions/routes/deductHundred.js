@@ -24,7 +24,7 @@ exports.post=(req,res)=>{
                     "coins":newCoins
                 },
                 "messages":[
-                    {"text":"Coins Update failed!!"}
+                    {"text":"Coins Updated!!"}
                 ]
             });
             return 0;   
