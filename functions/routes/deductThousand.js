@@ -23,7 +23,10 @@ exports.post=(req,res)=>{
         "set_attributes":{
             "deducted1000":tResult,
             "coins":newCoins
-        }
+        },
+        "messages":[
+            {"text":"Coins Updated"}
+        ]
     });
     return 0;
     }).catch(err => {
@@ -33,7 +36,10 @@ exports.post=(req,res)=>{
         "set_attributes":{
             "deducted1000":tResult,
             "coins":newCoins
-        }
+        },
+        "messages":[
+            {"text":"Coin Update failed!!"}
+        ]
     });
     });
  });
