@@ -20,30 +20,22 @@ exports.post=(req,res)=>{
     }).then(result => {
     console.log('Transaction success100', result);
     tResult='success';
-    res.send({
-        "set_attributes":{
-            "deducted100":tResult,
-            "coins":newCoins
-        },
-        "messages":[
-            {"text":"Coins Updated"}
-        ]
-    });
     return 0;
     }).catch(err => {
     console.log('Transaction failure100:', err);
     tResult='failed';
-    res.send({
-        "set_attributes":{
-            "deducted100":tResult,
-            "coins":newCoins
-        },
-        "messages":[
-            {"text":"Coins Update failed!!"}
-        ]
-    });
     });
  });
+
+ res.send({
+    "set_attributes":{
+        "deducted100":tResult,
+        "coins":newCoins
+    },
+    "messages":[
+        {"text":"Coins Update failed!!"}
+    ]
+});
 
     
 }
