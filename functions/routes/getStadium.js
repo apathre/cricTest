@@ -19,7 +19,7 @@ exports.post=(req,res)=>{
                      "elements":[
                        {
                          "title":stadiumText,
-                         "image_url":stadiumImage,
+                         "image_url":'https://i.ibb.co/b61LxGy/26078993567-2ff07689f9-z.jpg',
                        }
                      ]
                    }
