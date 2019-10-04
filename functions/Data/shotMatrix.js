@@ -58,14 +58,14 @@ exports.shot=[
     {
       name:"Vaheer Khan",
       style:"off spin",
-      lecon:fns.random(95,70),
-      recon:fns.random(95,70)
+      lecon:fns.random(85,70),
+      recon:fns.random(85,70)
     },
     {
       name:"Zakir Hassan",
       style:"leg spin",
-      lecon:fns.random(95,70),
-      recon:fns.random(95,70)
+      lecon:fns.random(85,70),
+      recon:fns.random(85,70)
     }
   ]
   

@@ -1,7 +1,7 @@
 const fns=require('../../Data/shotMatrix');
 
 exports.post=(req,res)=>{
-  var infoText,p1_status,p2_status,p3_status;
+  var infoText,p1_status,p2_status,p3_status,newStatus;
   var {runs,up1_status,up2_status,up3_status,ball}=req.body;
   
 
@@ -46,14 +46,13 @@ exports.post=(req,res)=>{
  
   else {
     if((runs===1||runs===3)){
-    [p1_status,p2_status,p3_status]=fns.status(up1_status,up2_status,up3_status);
+    newStatus=fns.status(up1_status,up2_status,up3_status);
+    p1_status=newStatus.p1_status;
+    p2_status=newStatus.p2_status;
+    p3_status=newStatus.p3_status;
   }
   if(runs===13||runs===14){
     runs=0;
-  }
-  
-  if(ball%6===0){
-    [p1_status,p2_status,p3_status]=fns.status(up1_status,up2_status,up3_status);
   }
   
    up1_status=p1_status;
