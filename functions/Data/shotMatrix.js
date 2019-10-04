@@ -622,27 +622,27 @@ exports.shot=[
   ]
   exports.stadiumImages=[
     {
-      'img':'https://ibb.co/zmsb1tL',
+      'img':'https://i.ibb.co/b61LxGy/26078993567-2ff07689f9-z.jpg',
       'text':'Wankhede Cricket Stadium, Mumbai'
     },
     {
-      'img':'https://ibb.co/DKK0kMG',
+      'img':'https://i.ibb.co/2KKGPM8/dharamshala-cricket-stadium.jpg',
       'text':'DharamShala Cricket Stadium'
     },
     {
-      'img':'https://ibb.co/K6XhLC3',
+      'img':'https://i.ibb.co/kKxB9YW/jpeg.jpg',
       'text':'Sharjah Cricket Stadium'
     },
     {
-      'img':'https://ibb.co/yg8KsXk',
+      'img':'https://i.ibb.co/j3Lq4Tw/played-gurpreet-australia-cricket-stadium-mohali-where-cb065864-9c37-11e7-9c3b-8e901839ece0.jpg',
       'text':'Mohali Cricket Stadium'
     },
     {
-      'img':'https://ibb.co/4ZfFDrx',
+      'img':'https://i.ibb.co/JRdcbJP/feroz-shah-kotla-0510-806x605-51475677231.jpg',
       'text':'Feroz Shah Kotla Cricket Stadium, Delhi'
     },
     {
-      'img':'https://ibb.co/JdTnX3k',
+      'img':'https://i.ibb.co/8BwMFY8/The-Oval-cricket-ground-best-in-the-world.jpg',
       'text':'Oval Cricket Ground'
     }
   ]

@@ -27,7 +27,9 @@ exports.post=(req,res)=>{
     let transaction = db.runTransaction(t => {
     return t.get(userRef)
         .then(doc => {
-        let newCoins = doc.data().coins + (bet*multiple);
+        let c_add=bet*(1-multiple);
+        let add=bet*multiple;
+        let newCoins = doc.data().coins + add;
             t.update(userRef, {coins: newCoins});
             return 0;
     }).then(result => {
@@ -46,7 +48,7 @@ exports.post=(req,res)=>{
             },
             "messages":[
                 {
-                    "text":`Coin Balance increased 💰💰 \nCurrent Coins: ${newCoins}`
+                    "text":`Coin Balance increased 💰💰 \nBet:${bet}\nCoins added:${c_add}\nCurrent Coins: ${newCoins}`
                 }
             ]
         });

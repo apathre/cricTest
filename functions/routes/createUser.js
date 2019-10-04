@@ -14,6 +14,7 @@ exports.post=(req,res)=>{
         "signed_up":req.body['signed up'],
         "last_seen":req.body['last seen'],
         "game_number":0,
+        "match_in_progress":0,
         "coins":0,
         "userWins":0,
         "compWins":0,
