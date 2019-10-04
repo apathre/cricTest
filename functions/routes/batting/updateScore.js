@@ -77,6 +77,7 @@ exports.post=(req,res)=>{
         default:console.log('error in matrixRes');
         break;
       }
+      runs=parseInt(runs);
      switch(runs){
        case 0:text=fns.scoreMessage0[fns.random(9,0)].text;
         break;
@@ -93,7 +94,11 @@ exports.post=(req,res)=>{
        case 10:text=fns.scoreMessage10[fns.random(9,0)].text;
         break; //catch out code
        case 11:text=fns.scoreMessage11[fns.random(2,0)].text;
-        break; //run out code
+        break; //run out code 
+       case 13:text="Well Defended!!";
+        break;
+       case 14:text="That's well blocked!!";
+        break;
        default: text='Thats Out!!';
         break;
      }
