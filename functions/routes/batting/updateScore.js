@@ -79,21 +79,21 @@ exports.post=(req,res)=>{
       }
       runs=parseInt(runs);
      switch(runs){
-       case 0:text=fns.scoreMessage0[fns.random(9,0)].text;
+       case 0:text=fns.scoreMessage0[sms.random(9,0)].text;
         break;
-       case 1:text=fns.scoreMessage1[fns.random(9,0)].text;
+       case 1:text=fns.scoreMessage1[sms.random(9,0)].text;
         break;
-       case 2:text=fns.scoreMessage2[fns.random(9,0)].text;
+       case 2:text=fns.scoreMessage2[sms.random(9,0)].text;
         break;
-       case 3:text=fns.scoreMessage3[fns.random(9,0)].text;
+       case 3:text=fns.scoreMessage3[sms.random(9,0)].text;
         break;
-       case 4:text=fns.scoreMessage4[fns.random(9,0)].text;
+       case 4:text=fns.scoreMessage4[sms.random(9,0)].text;
         break;
-       case 6:text=fns.scoreMessage6[fns.random(9,0)].text;
+       case 6:text=fns.scoreMessage6[sms.random(9,0)].text;
         break;
-       case 10:text=fns.scoreMessage10[fns.random(9,0)].text;
+       case 10:text=fns.scoreMessage10[sms.random(9,0)].text;
         break; //catch out code
-       case 11:text=fns.scoreMessage11[fns.random(2,0)].text;
+       case 11:text=fns.scoreMessage11[sms.random(2,0)].text;
         break; //run out code 
        case 13:text="Well Defended!!";
         break;
