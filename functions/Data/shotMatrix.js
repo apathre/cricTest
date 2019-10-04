@@ -72,6 +72,7 @@ exports.shot=[
   
   exports.strongAir=(conf,pitch)=>{
   var run=0;
+  console.log('AirS',pitch);
     if(pitch==='dead'){ 
         run=(conf>=0&&conf<=25)?10:
             (conf>25&&conf<=40)?1:
