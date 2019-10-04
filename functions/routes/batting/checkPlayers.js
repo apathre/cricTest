@@ -64,38 +64,14 @@ exports.post=(req,res)=>{
 
   res.send({
     "messages":[
-    {
-      "attachment":{
-        "type":"template",
-        "payload":{
-          "template_type":"list",
-          "top_element_style":"compact",
-          "elements":[
+    
             {
-              "title":`Player 1: ${up1}\t ${up1_batting}`,
-              "image_url":up1_img,
-              "subtitle":`${up1_status}\nConfidence: ${up1_conf}`
-            },
-            {
-              "title":`Player 2: ${up2}\t ${up2_batting}`,
-              "image_url":up2_img,
-              "subtitle":`${up2_status}\nConfidence: ${up2_conf}`
-            },
-            {
-              "title":`Player 3: ${up3}\t ${up3_batting}`,
-              "image_url":up3_img,
-              "subtitle":`${up3_status}\nConfidence: ${up3_conf}`
-            },
-            {
-              "title":`Score: ${uscore} \n Wickets:${wicket}`,
-              "subtitle":`🤖 Score:${cscore}\nUser Batting`
+              "text":`Player 1: ${up1}\t ${up1_batting}\n${up1_status}\nConfidence: ${up1_conf}\n\n
+                      Player 2: ${up2}\t ${up2_batting}\n${up2_status}\nConfidence: ${up2_conf}\n\n
+                      Player 3: ${up3}\t ${up3_batting}\n${up3_status}\nConfidence: ${up3_conf}\n\n
+                      Score: ${uscore} \n Wickets:${wicket}\n\nComp Score:${cscore}\n\nUser Batting`
               
             }
-          ]
-        }
-      }
-    }
-  ]
-        
+    ]      
   });
   }
