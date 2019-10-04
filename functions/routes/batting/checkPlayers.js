@@ -66,10 +66,7 @@ exports.post=(req,res)=>{
     "messages":[
     
             {
-              "text":`Player 1: ${up1}\t ${up1_batting}\n${up1_status}\nConfidence: ${up1_conf}\n\n
-                      Player 2: ${up2}\t ${up2_batting}\n${up2_status}\nConfidence: ${up2_conf}\n\n
-                      Player 3: ${up3}\t ${up3_batting}\n${up3_status}\nConfidence: ${up3_conf}\n\n
-                      Score: ${uscore} \n Wickets:${wicket}\n\nComp Score:${cscore}\n\nUser Batting`
+              "text":`Player 1: ${up1}\t ${up1_batting}\n${up1_status}\nConfidence: ${up1_conf}\n\nPlayer 2: ${up2}\t ${up2_batting}\n${up2_status}\nConfidence: ${up2_conf}\n\nPlayer 3: ${up3}\t ${up3_batting}\n${up3_status}\nConfidence: ${up3_conf}\n\nScore: ${uscore} \n Wickets:${wicket}\n\nComp Score:${cscore}\n\nUser Batting`
               
             }
     ]      
