@@ -72,7 +72,7 @@ exports.shot=[
   
   exports.strongAir=(conf,pitch)=>{
   var run=0;
-  console.log('AirS',pitch);
+  console.log('AirS',pitch,conf);
     if(pitch==='dead'){ 
         run=(conf>=0&&conf<=25)?10:
             (conf>25&&conf<=40)?1:
@@ -111,6 +111,7 @@ exports.shot=[
             (conf===100)?4*Math.round(Math.random()):11;
 
     }
+    console.log('run:',run);
     return run;
   }
   exports.strongGround=(conf,pitch)=>{
