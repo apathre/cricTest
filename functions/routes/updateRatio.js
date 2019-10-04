@@ -4,19 +4,19 @@ const functions=require('firebase-functions');
 let db=admin.firestore();
 
 exports.post=(req,res)=>{
-    var bet=req.body.bet;
-    var tResult='';
-    var multiple=1.8;
-    let data={
-        messenger_id:req.body['messenger user id']
+    
+    var data={
+        messenger_id:req.body['messenger user id'],
+        userWins:req.body.userWins,
+        compWins:req.body.compWins
     }
 
     let userRef = db.collection('users').doc(`${data.messenger_id}`);
     let transaction = db.runTransaction(t => {
     return t.get(userRef)
         .then(doc => {
-        let newUserWins = req.body.userWins;
-        let newCompWins=req.body.compWins;
+        let newUserWins = data.userWins;
+        let newCompWins = data.compWins;
         let newRatio=parseInt(newUserWins)/parseInt(newCompWins);
             t.update(userRef, {userWins:newUserWins, compWins:newCompWins, winRatio:newRatio});
             return 0;
