@@ -30,7 +30,7 @@ exports.post=(req,res)=>{
         let c_add=data.bet*(1-multiple);
         let add=data.bet*multiple;
         let newCoins = doc.data().coins + add;
-        console.log('newCoins:',newCoins);
+        console.log('newCoins:',newCoins,'bet:',bet,'multiple:',multiple);
             t.update(userRef, {coins: newCoins});
             return 0;
     }).then(result => {
