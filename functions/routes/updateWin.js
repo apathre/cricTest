@@ -4,19 +4,19 @@ const functions=require('firebase-functions');
 let db=admin.firestore();
 
 exports.post=(req,res)=>{
-    var bet=req.body.bet;
-    var pitch_type=req.body.pitch_type;
     
-    let data={
-        messenger_id:req.body['messenger user id']
+    var data={
+        messenger_id:req.body['messenger user id'],
+        bet:req.body.bet,
+        pitch_type:req.body.pitch_type
     }
 
     var tResult='';
     var multiple=0;
-    if(pitch_type==='dead'){
+    if(data.pitch_type==='dead'){
         multiple=1.4;
     }
-    else if(pitch_type==='green'){
+    else if(data.pitch_type==='green'){
         multiple=1.6;
     }
     else{
@@ -27,9 +27,10 @@ exports.post=(req,res)=>{
     let transaction = db.runTransaction(t => {
     return t.get(userRef)
         .then(doc => {
-        let c_add=bet*(1-multiple);
-        let add=bet*multiple;
+        let c_add=data.bet*(1-multiple);
+        let add=data.bet*multiple;
         let newCoins = doc.data().coins + add;
+        console.log('newCoins:',newCoins);
             t.update(userRef, {coins: newCoins});
             return 0;
     }).then(result => {
@@ -48,8 +49,8 @@ exports.post=(req,res)=>{
     });
     return 0;
     }).catch(err => {
-    console.log('Transaction failure:', err);
-    tResult='failed-1';
+    console.log('Transaction failure:at updateWin', err);
+    tResult='failed';
     });
  });
         
