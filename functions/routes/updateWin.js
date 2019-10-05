@@ -29,7 +29,7 @@ exports.post=(req,res)=>{
     let transaction = db.runTransaction(t => {
     return t.get(userRef)
         .then(doc => {
-        c_add=data.bet*(1-multiple);
+        c_add=parseInt(data.bet*(multiple-1));
         let add=data.bet*multiple;
         newCoins = doc.data().coins + add;
         console.log('newCoins:',newCoins,'bet:',data.bet,'multiple:',multiple);
