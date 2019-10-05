@@ -13,6 +13,8 @@ exports.post=(req,res)=>{
 
     var tResult='';
     var multiple=0;
+    var newCoins=0;
+    var c_add=0;
     if(data.pitch_type==='dead'){
         multiple=1.4;
     }
@@ -27,10 +29,10 @@ exports.post=(req,res)=>{
     let transaction = db.runTransaction(t => {
     return t.get(userRef)
         .then(doc => {
-        let c_add=data.bet*(1-multiple);
+        c_add=data.bet*(1-multiple);
         let add=data.bet*multiple;
-        let newCoins = doc.data().coins + add;
-        console.log('newCoins:',newCoins,'bet:',bet,'multiple:',multiple);
+        newCoins = doc.data().coins + add;
+        console.log('newCoins:',newCoins,'bet:',data.bet,'multiple:',multiple);
             t.update(userRef, {coins: newCoins});
             return 0;
     }).then(result => {
@@ -43,7 +45,7 @@ exports.post=(req,res)=>{
         },
         "messages":[
             {
-                "text":`Coin Balance increased 💰💰 \nBet:${bet}\nCoins added:${c_add}\nCurrent Coins: ${newCoins}`
+                "text":`Coin Balance increased 💰💰 \nBet:${data.bet}\nCoins added:${c_add}\nCurrent Coins: ${newCoins}`
             }
         ]
     });
