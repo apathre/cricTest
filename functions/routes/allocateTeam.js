@@ -3,14 +3,14 @@ const sms=require('./../Data/random');
 
 exports.post=(req,res)=>{
   
-  up1=fns.batsman[Math.round(sms.random(5,0))].name;
+  up1=fns.batsman[Math.round(sms.random(15,0))].name;
   
   do{
-    up2=fns.batsman[Math.round(sms.random(5,0))].name;
+    up2=fns.batsman[Math.round(sms.random(15,0))].name;
   }while(up2===up1);
   
   do{
-      up3=fns.batsman[Math.round(sms.random(5,0))].name;
+      up3=fns.batsman[Math.round(sms.random(15,0))].name;
      
     }while(up3===up1||up3===up2);
  

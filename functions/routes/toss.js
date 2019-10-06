@@ -4,8 +4,12 @@ const sms=require('./../Data/random');
 exports.post=(req,res)=>{
   var tossRes=Math.round(Math.random());
   var tossArr=[
-    "https://i.ibb.co/FwcRQL6/giphy.gif",
-    "https://i.ibb.co/QMm7Xfd/giphy.gif"
+    'https://i.ibb.co/g9q36NP/Toss-k0-LI-621x414-Live-Mint.jpg',
+    'https://i.ibb.co/ZhvkC7j/01-TOSSweb1-article-Large.jpg',
+    'https://i.ibb.co/YfT6jmk/England-Australia-Cricket-World-Cup-1151933.jpg',
+    'https://i.ibb.co/C9LdgFP/india-vs-pakistan.jpg',
+    'https://i.ibb.co/wK97KPr/The-Toss-594x360.jpg'
+
   ]
   
 
@@ -16,20 +20,25 @@ exports.post=(req,res)=>{
            "set_attributes":{
                             "tossWon":0
                             },
-           "messages":[
-                      {
-                        "attachment": {
-                        "type": "image",
-                        "payload": {
-                                     "url": tossArr[sms.random(1,0)]
-                                   }
-                             }
-                        },
-                        {
-                          "text":tossText1
-                        }
-                      ]
-         });
+            "messages": [
+                              {
+                                "attachment":{
+                                  "type":"template",
+                                  "payload":{
+                                    "template_type":"generic",
+                                    "image_aspect_ratio": "square",
+                                    "elements":[
+                                      {
+                                        "title":tossText1,
+                                        "image_url":tossArr[sms.random(4,0)]
+                                        
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                      });
   }
   else{
     let tossText2=`${req.body.first_name} won the Toss`;
@@ -37,19 +46,24 @@ exports.post=(req,res)=>{
            "set_attributes":{
                             "tossWon":1
                             },
-           "messages":[
-                    {
-                        "attachment": {
-                        "type": "image",
-                        "payload": {
-                                     "url": tossArr[sms.random(1,0)]
-                                   }
-                             }
-                        },
-                        {
-                          "text":tossText2
-                        }
-                ]
-          });
+                "messages": [
+                              {
+                                "attachment":{
+                                  "type":"template",
+                                  "payload":{
+                                    "template_type":"generic",
+                                    "image_aspect_ratio": "square",
+                                    "elements":[
+                                      {
+                                        "title":tossText2,
+                                        "image_url":tossArr[sms.random(4,0)]
+                                        
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+               });
     }
 }
