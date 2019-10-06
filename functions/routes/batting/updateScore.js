@@ -53,6 +53,9 @@ exports.post=(req,res)=>{
   let hitOrNot=(strike===up1)?fns.hitOrNot(bStyle,up1_sRate,up1_fRate):
   (strike===up2)?fns.hitOrNot(bStyle,up2_sRate,up2_fRate):fns.hitOrNot(bStyle,up3_sRate,up3_fRate);
   
+  if(pitch_type==='green'){
+    hitOrNot=hitOrNot+20;
+  }
   if(hitOrNot){
         
       var shotNo=(shotType==='Air'||shotType==='air')?0:

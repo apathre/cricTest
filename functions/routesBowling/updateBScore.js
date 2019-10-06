@@ -54,6 +54,9 @@ exports.post=(req,res)=>{
   let hitOrNot=(strike===cp1)?fns.hitOrNot(bStyle,cp1_sRate,cp1_fRate):
   (strike===cp2)?fns.hitOrNot(bStyle,cp2_sRate,cp2_fRate):fns.hitOrNot(bStyle,cp3_sRate,cp3_fRate);
   
+  if(pitch_type==='green'){
+    hitOrNot=hitOrNot+20;
+  }
   if(hitOrNot){
       //identify which shot to play  
       shotNo=fns.shotType(conf);

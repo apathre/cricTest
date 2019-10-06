@@ -11,30 +11,32 @@ exports.shot=[
       style:"left-handed",
       sRate:fns.random(95,70),
       fRate:fns.random(95,70),
-      img:"https://i.ibb.co/VY3rVBv/ipl-player-2-done.jpg"
-      
-      
+      img:"https://i.ibb.co/VY3rVBv/ipl-player-2-done.jpg",
+      num:1
     },
     {
       name:"Ken Stokes",
       style:"right-handed",
       sRate:fns.random(95,70),
       fRate:fns.random(95,70),
-      img:"https://i.ibb.co/2Zgjs2T/test-batsman-3-done.jpg"
+      img:"https://i.ibb.co/2Zgjs2T/test-batsman-3-done.jpg",
+      num:2
     },
     {
       name:"Nihar Kohli",
       style:"right-handed",
       sRate:fns.random(95,70),
       fRate:fns.random(95,70),
-      img:"https://i.ibb.co/GdqJz9T/ipl-player-5-done.jpg"
+      img:"https://i.ibb.co/GdqJz9T/ipl-player-5-done.jpg",
+      num:3
     },
     {
       name:"Mukesh Raina",
       style:"left-handed",
       sRate:fns.random(95,70),
       fRate:fns.random(95,70),
-      img:"https://i.ibb.co/zrLPLsC/ipl-player-3-done.jpg"
+      img:"https://i.ibb.co/zrLPLsC/ipl-player-3-done.jpg",
+      num:4
   
     },
     {
@@ -42,14 +44,91 @@ exports.shot=[
       style:"left-handed",
       sRate:fns.random(95,70),
       fRate:fns.random(95,70),
-      img:"https://i.ibb.co/X4BgWdc/test-batsman-2-done.jpg"
+      img:"https://i.ibb.co/X4BgWdc/test-batsman-2-done.jpg",
+      num:5
     },
     { 
       name:"Chetan Gujara",
       style:"right-handed",
       sRate:fns.random(95,70),
       fRate:fns.random(95,70),
-      img:"https://i.ibb.co/1QG7mqd/test-batsman-1-done.jpg"
+      img:"https://i.ibb.co/1QG7mqd/test-batsman-1-done.jpg",
+      num:6
+    },
+    {
+      name:"Shivraj Singh",
+      style:"left-handed",
+      sRate:fns.random(95,70),
+      fRate:fns.random(95,70),
+      img:"https://i.ibb.co/GnVHfZQ/p12-full.jpg",
+      num:7
+    },
+    {
+      name:"V S Koni",
+      style:"right-handed",
+      sRate:fns.random(95,70),
+      fRate:fns.random(95,70),
+      img:"https://i.ibb.co/FxYjv0w/p8-cut.jpg",
+      num:8
+    },
+    {
+      name:"Dabang Warner",
+      style:"left-handed",
+      sRate:fns.random(95,70),
+      fRate:fns.random(95,70),
+      img:"https://i.ibb.co/zZTwRTP/p6-cut.jpg",
+      num:9
+    },
+    {
+      name:"Alex Tintoff",
+      style:"right-handed",
+      sRate:fns.random(95,70),
+      fRate:fns.random(95,70),
+      img:"https://i.ibb.co/R7gZ8Ks/p14-cut.jpg",
+      num:10
+    },
+    {
+      name:"Mahan Kohli",
+      style:"right-handed",
+      sRate:fns.random(95,70),
+      fRate:fns.random(95,70),
+      img:"https://i.ibb.co/KL8Qw9w/p11-cut.jpg",
+      num:11
+
+    },
+    {
+      name:"Major Singh",
+      style:"left-handed",
+      sRate:fns.random(95,70),
+      fRate:fns.random(95,70),
+      img:"https://i.ibb.co/LSyWftF/p9-full.jpg",
+      num:12
+
+    },
+    {
+      name:"Robn King",
+      style:"left-handed",
+      sRate:fns.random(95,70),
+      fRate:fns.random(95,70),
+      img:"https://i.ibb.co/443ZvM0/p4-full.jpg",
+      num:13
+    },
+    {
+      name:"Anchor Dravid",
+      style:"raghtt-handed",
+      sRate:fns.random(95,70),
+      fRate:fns.random(95,70),
+      img:"https://i.ibb.co/wcbq5qg/p13-cut.jpg",
+      num:14
+
+    },
+    {
+      name:"Chulbul Pandey",
+      style:"left-handed",
+      sRate:fns.random(95,70),
+      fRate:fns.random(95,70),
+      img:"https://i.ibb.co/R7gZ8Ks/p14-cut.jpg",
+      num:15
     }
     
   ]
@@ -57,7 +136,7 @@ exports.shot=[
   exports.bowlers=[
     {
       name:"Vaheer Khan",
-      style:"off spin",
+      style:"Fast Bowler",
       lecon:fns.random(85,70),
       recon:fns.random(85,70)
     },
