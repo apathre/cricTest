@@ -2,26 +2,28 @@ const fns=require('../../Data/shotMatrix');
 
 
 exports.post=(req,res)=>{
-  var {up1,up2,up3,cb1,cb2,up1_status,up2_status,up3_status,up1_conf,up2_conf,up3_conf,up1_img,up2_img,up3_img,ball,uscore,cscore}=req.body;
+  var {up1,up2,up3,cb1,cb2,up1_status,up2_status,up3_status,up1_conf,up2_conf,up3_conf,up1_img,up2_img,up3_img,ball,uscore,cscore,first_name}=req.body;
   var {batting, bowler, pStyle, bStyle,econ,hitRate,conf}='0';
   var wicket=0;
-  var up1_batting='',up2_batting='',up3_batting='';
+  var up1_emoji=''; 
+  var up2_emoji='';
+  var up3_emoji='';
 
 
   if(up1_status==='strike'){
     batting=up1;
     conf=up1_conf;
-    up1_batting='on Strike';
+    up1_emoji='🏏';
   }
   else if(up2_status==='strike'){
     batting=up2;
     conf=up2_conf;
-    up2_batting='on Strike';
+    up2_emoji='🏏';
   }
   else{
     batting=up3;
     conf=up3_conf;
-    up3_batting='on Strike';
+    up3_emoji='🏏';
   }
 
   if(ball>=0&&ball<=6){
@@ -54,19 +56,22 @@ exports.post=(req,res)=>{
   }
   if(up1_status==='out'){
     wicket++;
+    up1_emoji='☝️';
   }
   if(up2_status==='out'){
     wicket++;
+    up2_emoji='☝️';
   }
   if(up3_status==='out'){
     wicket++;
+    up3_emoji='☝️';
   }
 
   res.send({
     "messages":[
     
             {
-              "text":`Player 1: ${up1}\n${up1_status}\nConfidence: ${up1_conf}\n\nPlayer 2: ${up2}\n${up2_status}\nConfidence: ${up2_conf}\n\nPlayer 3: ${up3}\n${up3_status}\nConfidence: ${up3_conf}\n\nScore: ${uscore}\nWickets:${wicket}\n\nComp Score:${cscore}\n\nUser Batting`       
+              "text":`Player 1: ${up1}\n${up1_status}${up1_emoji}\nConfidence: ${up1_conf}\n\nPlayer 2: ${up2}\n${up2_status}${up2_emoji}\nConfidence: ${up2_conf}\n\nPlayer 3: ${up3}\n${up3_status}${up3_emoji}\nConfidence: ${up3_conf}\n\nScore: ${uscore}\nWickets:${wicket}\n\n🤖 Score:${cscore}\n\n${first_name} Batting`       
             }
     ]      
   });
