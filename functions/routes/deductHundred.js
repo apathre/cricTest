@@ -4,8 +4,8 @@ const functions=require('firebase-functions');
 let db=admin.firestore();
 
 exports.post=(req,res)=>{
-    console.log('touched deduct hundred');
-    var coin=100;
+
+    var coin=req.body.bet;
     var newCoins=0;
     var tResult='failed';
     let data={
@@ -16,17 +16,41 @@ exports.post=(req,res)=>{
         t.get(userRef)
         .then(doc => {
             tResult='success';
-            newCoins = doc.data().coins - coin;
-            t.update(userRef, {coins: newCoins});
-            res.send({
-                "set_attributes":{
-                    "deducted100":tResult,
-                    "coins":newCoins
-                },
-                "messages":[
-                    {"text":"Coins Updated!!"}
-                ]
-            });
+            if(doc.data().coins>coin){
+                newCoins = doc.data().coins - coin;
+                t.update(userRef, {coins: newCoins});
+                res.send({
+                    "set_attributes":{
+                        "deducted":tResult,
+                        "coins":newCoins
+                    },
+                    "messages":[
+                        {"text":"Coins Updated!!"}
+                    ]
+                });
+            }
+            else {
+                res.send({
+                    "messages":[
+                        {
+                            "attachment": {
+                              "type": "template",
+                              "payload": {
+                                "template_type": "button",
+                                "text": "Coin Balance is low. Please recharge to play again",
+                                "buttons": [
+                                  {
+                                    "type": "web_url",
+                                    "url": "https://paytm.com",
+                                    "title": "Recharge"
+                                  },
+                                 ]
+                               }
+                            }
+                        }
+                    ]
+                });
+            }
             return 0;   
         }).then(result => {
     console.log('Transaction success100', result);
@@ -37,7 +61,7 @@ exports.post=(req,res)=>{
     tResult='failed';
     res.send({
         "set_attributes":{
-            "deducted100":tResult,
+            "deducted":tResult,
         },
         "messages":[
             {"text":"Coins Update failed!!"}
