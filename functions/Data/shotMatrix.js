@@ -189,7 +189,6 @@ exports.shot=[
             (conf===100)?4*Math.round(Math.random()):11;
 
     }
-    console.log('run:',run);
     return run;
   }
   exports.strongGround=(conf,pitch)=>{
