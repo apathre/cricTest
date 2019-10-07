@@ -27,23 +27,23 @@ exports.post=(req,res)=>{
   }
   //Playing check
   if(up1_status==='playing'){
-    up1_emoji='🤞'
+    up1_emoji='🤹‍♂️'
   }
   else if(up2_status==='playing'){
-    up2_emoji='🤞'
+    up2_emoji='🤹‍♂️'
   }
   else{
-    up3_emoji='🤞'
+    up3_emoji='🤹‍♂️'
   }
   //bench check
   if(up1_status==='bench'){
-    up1_emoji='🥱'
+    up1_emoji='🙄'
   }
-  else if(up1_status==='bench'){
-    up2_emoji='🥱'
+  else if(up2_status==='bench'){
+    up2_emoji='🙄'
   }
   else{
-    up3_emoji='🥱'
+    up3_emoji='🙄'
   }
 
   if(ball>=0&&ball<=6){
@@ -91,7 +91,7 @@ exports.post=(req,res)=>{
     "messages":[
     
             {
-              "text":`Player 1: ${up1}\n${up1_status}  ${up1_emoji}\nConfidence: ${up1_conf}\n\nPlayer 2: ${up2}\n${up2_status}  ${up2_emoji}\nConfidence: ${up2_conf}\n\nPlayer 3: ${up3}\n${up3_status}  ${up3_emoji}\nConfidence: ${up3_conf}\n\nScore: ${uscore}\nWickets:${wicket}\n\n🤖 Score:${cscore}\n\n${first_name} Batting`       
+              "text":`Player 1: ${up1}\n${up1_status}  ${up1_emoji}\nConfidence: ${up1_conf}\n\nPlayer 2: ${up2}\n${up2_status}  ${up2_emoji}\nConfidence: ${up2_conf}\n\nPlayer 3: ${up3}\n${up3_status}  ${up3_emoji}\nConfidence: ${up3_conf}\n\nScore: ${uscore} runs\nWickets:${wicket}\n\n🤖 Score:${cscore} runs\n\n${first_name} Batting`       
             }
     ]      
   });
