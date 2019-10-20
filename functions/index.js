@@ -24,6 +24,7 @@ const updateRatio=require('./routes/updateRatio');
 const getStadium=require('./routes/getStadium');
 const updateGameNo=require('./routes/updateGameNo');
 const checkInProgress=require('./routes/checkInProgress');
+const updateData=require('./routes/updateData');
 
 //Defining batting variables
 const allocateTeam=require('./routes/allocateTeam.js');
@@ -61,6 +62,7 @@ app.post('/updateRatio',updateRatio.post);
 app.post('/getStadium',getStadium.post);
 app.post('/updateGameNo',updateGameNo.post);
 app.post('/checkInProgress',checkInProgress.post);
+app.post('/updateData',updateData.post);
 
 //routes batting
 app.post('/allocateTeam',allocateTeam.post);
