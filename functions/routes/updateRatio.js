@@ -1,5 +1,4 @@
 const admin=require('firebase-admin');
-const functions=require('firebase-functions');
 
 let db=admin.firestore();
 
@@ -22,11 +21,9 @@ exports.post=(req,res)=>{
             return 0;
     }).then(result => {
     console.log('Update Wins success');
-    tResult='success';
     return 0;
     }).catch(err => {
     console.log('update wins failure:', err);
-    tResult='failed';
     });
  });
 

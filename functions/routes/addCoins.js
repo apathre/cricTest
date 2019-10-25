@@ -5,9 +5,8 @@ let db=admin.firestore();
 
 exports.post=(req,res)=>{
 
-    console.log('touched add Coin');
     var coin=1000;
-    var tResult='failed';
+
     let data={
         messenger_id:req.body['messenger user id']
     }
@@ -20,17 +19,15 @@ exports.post=(req,res)=>{
             return 0;
     }).then(result => {
     console.log('Added Coins');
-    tResult='success';
     return 0;
     }).catch(err => {
     console.log('Error failure', err);
-    tResult='failed';
     });
  });
 
     res.send({
         "messages":[
-        {"text":"Coins added 1000"}
+        {"text":"Coins added: 1000"}
         ]
     });
 }

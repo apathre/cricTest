@@ -1,5 +1,4 @@
 const admin=require('firebase-admin');
-const functions=require('firebase-functions');
 
 let db=admin.firestore();
 
@@ -8,10 +7,10 @@ exports.post=(req,res)=>{
     var data={
         messenger_id:req.body['messenger user id'],
         bet:req.body.bet,
-        pitch_type:req.body.pitch_type
+        pitch_type:req.body.pitch_type,
+        userWins:parseInt(req.body.userWins)
     }
 
-    var tResult='';
     var multiple=0;
     var newCoins=0;
     var c_add=0;
@@ -24,7 +23,7 @@ exports.post=(req,res)=>{
     else{
         multiple=1.8;
     }
-
+    multiple=(userWins%25===0)?5:multiple;
     let userRef = db.collection('users').doc(`${data.messenger_id}`);
     let transaction = db.runTransaction(t => {
     return t.get(userRef)
@@ -37,7 +36,7 @@ exports.post=(req,res)=>{
             return 0;
     }).then(result => {
     console.log('Transaction success', result);
-    tResult='success';
+    
     res.send({
         "set_attributes":{
             "updatedWin":tResult,
@@ -52,7 +51,6 @@ exports.post=(req,res)=>{
     return 0;
     }).catch(err => {
     console.log('Transaction failure:at updateWin', err);
-    tResult='failed';
     });
  });
         
