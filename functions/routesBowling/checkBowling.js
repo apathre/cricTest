@@ -22,7 +22,7 @@ exports.post=(req,res)=>{
           }
         }
         
-        if(bball>=6||wicket===2){
+        if(bball>=3||wicket===2){
             bowling_status='match over';
           }
         else{

@@ -19,7 +19,7 @@ exports.post=(req,res)=>{
     conf=cp2_conf;
     cp2_emoji='🏏';
   }
-  else{
+  else if(cp3_status==='strike'){
     batting=cp3;
     conf=cp3_conf;
     cp3_emoji='🏏';
@@ -31,7 +31,7 @@ exports.post=(req,res)=>{
   else if(cp2_status==='playing'){
     cp2_emoji='🤹‍♂️'
   }
-  else{
+  else if(cp2_status==='playing'){
     cp3_emoji='🤹‍♂️'
   }
   //bench check

@@ -12,7 +12,7 @@ exports.post=(req,res)=>{
         cp1_sRate=fns.batsman[i].sRate;
         cp1_fRate=fns.batsman[i].fRate; 
         cp1_runs=0;
-        cp1_conf=sms.random(25,0);
+        cp1_conf=sms.random(60,30);
         cp1_img=fns.batsman[i].img;
      }
      if(fns.batsman[i].name===cp2){
@@ -20,7 +20,7 @@ exports.post=(req,res)=>{
         cp2_sRate=fns.batsman[i].sRate;
         cp2_fRate=fns.batsman[i].fRate;
         cp2_runs=0;
-        cp2_conf=sms.random(25,0);
+        cp2_conf=sms.random(60,30);
         cp2_img=fns.batsman[i].img;
      }
      if(fns.batsman[i].name===cp3){
@@ -28,7 +28,7 @@ exports.post=(req,res)=>{
         cp3_sRate=fns.batsman[i].sRate;
         cp3_fRate=fns.batsman[i].fRate;
         cp3_runs=0;
-        cp3_conf=sms.random(25,0);
+        cp3_conf=sms.random(60,30);
         cp3_img=fns.batsman[i].img;
      }
   }

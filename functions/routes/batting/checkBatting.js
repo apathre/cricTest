@@ -21,7 +21,7 @@ exports.post=(req,res)=>{
           }
         }
         
-        if(ball>=6||wicket===2){
+        if(ball>=3||wicket===2){
             batting_status='match over';
           }
         else{

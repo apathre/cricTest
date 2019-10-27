@@ -23,7 +23,7 @@ exports.post=(req,res)=>{
     else{
         multiple=1.8;
     }
-    multiple=(userWins%25===0)?5:multiple;
+    multiple=(data.userWins%25===0)?5:multiple;
     let userRef = db.collection('users').doc(`${data.messenger_id}`);
     let transaction = db.runTransaction(t => {
     return t.get(userRef)
@@ -39,7 +39,6 @@ exports.post=(req,res)=>{
     
     res.send({
         "set_attributes":{
-            "updatedWin":tResult,
             "coins":newCoins
         },
         "messages":[

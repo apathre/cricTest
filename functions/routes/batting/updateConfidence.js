@@ -20,9 +20,9 @@ exports.post=function(req,res){
             break;
           case 6:cpts=49;
             break;
-          case 13:cpts=20;
+          case 13:cpts=30;
            break;
-          case 14:cpts=20;
+          case 14:cpts=30;
            break;
           default:cpts=0;
             break;  
