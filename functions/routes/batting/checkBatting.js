@@ -6,7 +6,7 @@ exports.post=(req,res)=>{
     cscore=parseInt(cscore);
     ball=parseInt(ball);
     if((uscore<=cscore&&cscore>0)||(uscore>=cscore&&cscore===0)){
-        if(ball>=6){
+        if(ball>=3){
           batting_status='match over';
         }
         else {

@@ -7,7 +7,7 @@ exports.post=(req,res)=>{
     var bowling_status,wicket=0;
     
     if((cscore<=uscore&&uscore>0)||(cscore>=uscore&&uscore===0)){
-        if(bball>=6){
+        if(bball>=3){
           bowling_status='match over';
         }
         else {
