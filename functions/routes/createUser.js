@@ -4,8 +4,25 @@ const functions=require('firebase-functions');
 let db=admin.firestore();
 
 exports.post=(req,res)=>{
-    console.log('body:',db.collection('users'));
-    let id=req.body['messenger user id'];
+    
+    var gameNum=0;
+    let userRef = db.collection('game_players').doc(`player_num`);
+    let transaction = db.runTransaction(t => {
+    return t.get(userRef)
+        .then(doc => {    
+        gameNum = parseInt(doc.data().game_num) + 1;
+            t.update(userRef, { game_num: gameNum});
+            return 0;
+    }).then(result => {
+      console.log('Player Number updated!!')
+    return 0;
+    }).catch(err => {
+    console.log('Transaction failure:at createUser', err);
+    });
+ });  
+    
+    
+    
     let data={
         "messenger_id":req.body['messenger user id'],
         "first_name":req.body['first name'],
@@ -18,12 +35,13 @@ exports.post=(req,res)=>{
         "coins":0,
         "userWins":0,
         "compWins":0,
-        "winRatio":0
+        "winRatio":0,
+        "player_num":gameNum,
         }
     let docRef = db.collection('users').doc(`${data.messenger_id}`);
 
     let setAda = docRef.set(data);
-  
+    
     res.status(200);
 
 }
