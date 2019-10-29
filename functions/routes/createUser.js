@@ -15,15 +15,7 @@ exports.post=(req,res)=>{
             return 0;
     }).then(result => {
       console.log('Player Number updated!!')
-    return 0;
-    }).catch(err => {
-    console.log('Transaction failure:at createUser', err);
-    });
- });  
-    
-    
-    
-    let data={
+      let data={
         "messenger_id":req.body['messenger user id'],
         "first_name":req.body['first name'],
         "last_name":req.body['last name'],
@@ -37,11 +29,22 @@ exports.post=(req,res)=>{
         "compWins":0,
         "winRatio":0,
         "player_num":gameNum,
+        "email":req.body.email
         }
+        console.log('email:',data.email);
     let docRef = db.collection('users').doc(`${data.messenger_id}`);
 
     let setAda = docRef.set(data);
     
     res.status(200);
+    return 0;
+    }).catch(err => {
+    console.log('Transaction failure:at createUser', err);
+    });
+ });  
+    
+    
+    
+    
 
 }

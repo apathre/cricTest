@@ -25,7 +25,10 @@ exports.post=(req,res)=>{
     else if(ubdCount<cbdCount){
         winner=comp;
     }
-    else{ winner=(Math.random()?comp:user); }
+    else{ 
+        
+        winner=(Math.round(Math.random()))?comp:user;
+     }
     
     
     res.send({

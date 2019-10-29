@@ -14,6 +14,7 @@ exports.post=(req,res)=>{
     let transaction = db.runTransaction(t => (
         t.get(userRef)
         .then(doc => {
+                console.log('updated coins');
                 newCoins=coin;
                 t.update(userRef, {coins: newCoins});
             return 0;   
