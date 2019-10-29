@@ -2,7 +2,7 @@ const fns=require('./../Data/shotMatrix');
 
 exports.post=(req,res)=>{
   var infoText,p1_status,p2_status,p3_status,newStatus;
-  var {runs,cp1_status,cp2_status,cp3_status,bball}=req.body;
+  var {runs,cp1_status,cp2_status,cp3_status,bball,cb1_runs,cb2_runs,cb3_runs,cb4_runs,cb5_runs,cb6_runs}=req.body;
   runs=parseInt(runs);
   if(runs===10||runs===11||runs===12){
     switch(cp1_status){
@@ -55,6 +55,22 @@ exports.post=(req,res)=>{
     infoText=`🤖 scored ${runs} runs`;
   }
 
+  switch(bball){
+    case 1: cb1_runs=runs;
+     break;
+    case 2: cb2_runs=runs;
+     break;
+    case 3: cb3_runs=runs;
+     break;
+    case 4: cb4_runs=runs;
+     break;
+    case 5: cb5_runs=runs;
+     break;
+    case 6: cb6_runs=runs;
+     break;
+    default:
+       break;
+  }
 
 
   res.send({
@@ -62,7 +78,13 @@ exports.post=(req,res)=>{
       "cp1_status":cp1_status,
       "cp2_status":cp2_status,
       "cp3_status":cp3_status,
-      "runs":runs
+      "runs":runs,
+      "cb1_runs":cb1_runs,
+      "cb2_runs":cb2_runs,
+      "cb3_runs":cb3_runs,
+      "cb4_runs":cb4_runs,
+      "cb5_runs":cb5_runs,
+      "cb6_runs":cb6_runs,
     },
     "messages":[
       {"text":infoText}

@@ -50,12 +50,9 @@ exports.post=(req,res)=>{
     bStrengthNo=fns.bStrengthNo(bowling,cb1,cb2,cb1_recon,cb2_recon);
   }
   //Identifying whether he hit the ball ot not
-  let hitOrNot=(strike===up1)?fns.hitOrNot(bStyle,up1_sRate,up1_fRate):
-  (strike===up2)?fns.hitOrNot(bStyle,up2_sRate,up2_fRate):fns.hitOrNot(bStyle,up3_sRate,up3_fRate);
+  let hitOrNot=(strike===up1)?fns.hitOrNot(bStyle,up1_sRate,up1_fRate,pitch_type):
+  (strike===up2)?fns.hitOrNot(bStyle,up2_sRate,up2_fRate,pitch_type):fns.hitOrNot(bStyle,up3_sRate,up3_fRate,pitch_type);
   
-  if(pitch_type==='green'){
-    hitOrNot=hitOrNot+20;
-  }
   if(hitOrNot){
         
       var shotNo=(shotType==='Air'||shotType==='air')?0:

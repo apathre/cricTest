@@ -304,7 +304,7 @@ exports.shot=[
   
   
   
-  exports.hitOrNot=(bStyle,sRate,fRate)=>{
+  exports.hitOrNot=(bStyle,sRate,fRate,pitch_type)=>{
   
     if(bStyle==="off spin"||bStyle==="leg spin"){
       hitRate=sRate;
@@ -313,6 +313,9 @@ exports.shot=[
       hitRate=fRate;
     }
     var hit=Math.floor(Math.random()*100);
+    if(pitch_type==='green'){
+      hitRate=hitRate+20;
+    }
     console.log('hit',hit,'hitRate:',hitRate);
     if(hit<=hitRate){
       return 1;

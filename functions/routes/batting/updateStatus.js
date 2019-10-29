@@ -2,7 +2,7 @@ const fns=require('../../Data/shotMatrix');
 
 exports.post=(req,res)=>{
   var infoText,p1_status,p2_status,p3_status,newStatus;
-  var {runs,up1_status,up2_status,up3_status,ball}=req.body;
+  var {runs,up1_status,up2_status,up3_status,ball,ub1_runs,ub2_runs,ub3_runs,ub4_runs,ub5_runs,ub6_runs}=req.body;
   
 
   runs=parseInt(runs);
@@ -61,13 +61,37 @@ exports.post=(req,res)=>{
    infoText=`You scored ${runs} runs`;
 
   }
+  
+  
+  switch(ball){
+    case 1: ub1_runs=runs;
+     break;
+    case 2: ub2_runs=runs;
+     break;
+    case 3: ub3_runs=runs;
+     break;
+    case 4: ub4_runs=runs;
+     break;
+    case 5: ub5_runs=runs;
+     break;
+    case 6: ub6_runs=runs;
+     break;
+    default:
+       break;
+  }
 
   res.send({
     "set_attributes":{
       "up1_status":up1_status,
       "up2_status":up2_status,
       "up3_status":up3_status,
-      "runs":runs
+      "runs":runs,
+      "ub1_runs":ub1_runs,
+      "ub2_runs":ub2_runs,
+      "ub3_runs":ub3_runs,
+      "ub4_runs":ub4_runs,
+      "ub5_runs":ub5_runs,
+      "ub6_runs":ub6_runs,
     },
     "messages":[
       { "text":infoText }
