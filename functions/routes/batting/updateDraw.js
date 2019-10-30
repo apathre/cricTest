@@ -20,14 +20,14 @@ exports.post=(req,res)=>{
     if(cb6_runs===4||cb6_runs===6){cbdCount++}
 
     if(ubdCount>cbdCount){
-        winner=user;
+        winner='user';
     }
     else if(ubdCount<cbdCount){
-        winner=comp;
+        winner='comp';
     }
     else{ 
         
-        winner=(Math.round(Math.random()))?comp:user;
+        winner=(Math.round(Math.random()))?'comp':'user';
      }
     
     
