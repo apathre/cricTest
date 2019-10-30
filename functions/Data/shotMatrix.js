@@ -314,7 +314,7 @@ exports.shot=[
     }
     var hit=Math.floor(Math.random()*100);
     if(pitch_type==='green'){
-      hitRate=parseInt(hitRate)-10;
+      hitRate=parseInt(hitRate)-20;
     }
     console.log('hit',hit,'hitRate:',hitRate);
     if(hit<=hitRate){
