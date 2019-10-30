@@ -77,6 +77,7 @@ exports.post=(req,res)=>{
         default:console.log('error in matrixRes');
         break;
       }
+      var img='';
       runs=parseInt(runs);
      switch(runs){
        case 0:text=fns.scoreMessage0[sms.random(9,0)].text;
@@ -89,7 +90,9 @@ exports.post=(req,res)=>{
         break;
        case 4:text=fns.scoreMessage4[sms.random(9,0)].text;
         break;
-       case 6:text=fns.scoreMessage6[sms.random(9,0)].text;
+       case 6:var ran=sms.random(9,0);
+         text=fns.scoreMessage6[ran].text;
+         img=fns.scoreMessage6[ran].img;
         break;
        case 10:text=fns.scoreMessage10[sms.random(9,0)].text;
         break; //catch out code
@@ -102,7 +105,7 @@ exports.post=(req,res)=>{
        default: text='Thats Out!!';
         break;
      }
-     img='';
+     img=(img==='')?'':img;
   }
   else{
     runs=12; //bowled code

@@ -551,34 +551,44 @@ exports.shot=[
   ]
   exports.scoreMessage6=[
     {
-      text:"Over the ground. And 6!!"
+      text:"Over the ground. And 6!!",
+      img:'https://i.ibb.co/gr7wqMS/sixer-10.gif'
     },
     {
-      text:"Helicopter shot and in the stands. 6 runs"
+      text:"Helicopter shot and in the stands. 6 runs",
+      img:'https://i.ibb.co/72d7LTc/dhoni-helicopter-sixer-8.gif'
     },
     {
-      text:"Ball went high in the air. 6 runs"
+      text:"Ball went high in the air. 6 runs",
+      img:'https://i.ibb.co/GMYWH0x/sixer-4.gif'
     },
     {
-      text:"SIX runs, a slower full toss around off, Batsman opens up and smashes over the bowler's head"
+      text:"SIX runs, a slower full toss around off, Batsman opens up and smashes over the bowler's head",
+      img:'https://i.ibb.co/ynrbSzk/gayle-sixer-2.gif'
     },
     {
-      text:"SIX runs, fuller outside off and Batsman goes big, towards long-on, Fielder positions himself right at the boundary and takes the catch but also takes a small step back and ends up stepping on to the boundary line. He throws the ball in but that was too late. The third umpire just confirms the same."
+      text:"SIX runs, fuller outside off and Batsman goes big, towards long-on, Fielder positions himself right at the boundary and takes the catch but also takes a small step back and ends up stepping on to the boundary line. He throws the ball in but that was too late. The third umpire just confirms the same.",
+      img:'https://i.ibb.co/VJMhzFZ/boundary-sixer-6.gif'
     },
     {
-      text:"SIX runs, some innovation there from Batsman, was a slower one coming in, Batsman just reverse pulls it over short third man for a six"
+      text:"SIX runs, some innovation there from Batsman, was a slower one coming in, Batsman just reverse pulls it over short third man for a six",
+      img:'https://i.ibb.co/0BW4N8j/ganguly-sixer-1.gif'
     },
     {
-      text:"SIX runs, HUGE! Batsman spots one in the slot and just swats through the line to send it arcing high into the night sky and well over the boundary"
+      text:"SIX runs, HUGE! Batsman spots one in the slot and just swats through the line to send it arcing high into the night sky and well over the boundary",
+      img:'https://i.ibb.co/S0JdLzK/dhoni-sixer-9.gif'
     },
     {
-      text:"SIX runs, down on one knee and clears deep square leg, was a length ball outside off, Batsman goes across and down and sweeps it for a six"
+      text:"SIX runs, down on one knee and clears deep square leg, was a length ball outside off, Batsman goes across and down and sweeps it for a six",
+      img:'https://i.ibb.co/w07NCbp/sixer-5.gif'
     },
     {
-      text:"SIX, that was slammed! Batsman knelt down and punished that delivery by employing the slog sweep."
+      text:"SIX, that was slammed! Batsman knelt down and punished that delivery by employing the slog sweep.",
+      img:'https://i.ibb.co/0MSyhqd/sixer-3.gif'
     },
     {
-      text:"SIX, one of the cleanest hits of the evening! Down on his knee as he connects the slogsweep to perfection, clears deep mid-wicket as the ball sails into the stands for half-a-dozen"
+      text:"SIX, one of the cleanest hits of the evening! Down on his knee as he connects the slogsweep to perfection, clears deep mid-wicket as the ball sails into the stands for half-a-dozen",
+      img:'https://i.ibb.co/0qkZVZV/dhoni-sixer-7.gif'
     }
   ]
   
