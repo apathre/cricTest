@@ -5,19 +5,19 @@ exports.post=(req,res)=>{
     var cbdCount=0;
     var winner='';
 
-    if(ub1_runs===4||ub1_runs===6){ubdCount++}
-    if(ub2_runs===4||ub2_runs===6){ubdCount++}
-    if(ub3_runs===4||ub3_runs===6){ubdCount++}
-    if(ub4_runs===4||ub4_runs===6){ubdCount++}
-    if(ub5_runs===4||ub5_runs===6){ubdCount++}
-    if(ub6_runs===4||ub6_runs===6){ubdCount++}
+    if(ub1_runs==='4'||ub1_runs==='6'){ubdCount++}
+    if(ub2_runs==='4'||ub2_runs==='6'){ubdCount++}
+    if(ub3_runs==='4'||ub3_runs==='6'){ubdCount++}
+    if(ub4_runs==='4'||ub4_runs==='6'){ubdCount++}
+    if(ub5_runs==='4'||ub5_runs==='6'){ubdCount++}
+    if(ub6_runs==='4'||ub6_runs==='6'){ubdCount++}
 
-    if(cb1_runs===4||cb1_runs===6){cbdCount++}
-    if(cb2_runs===4||cb2_runs===6){cbdCount++}
-    if(cb3_runs===4||cb3_runs===6){cbdCount++}
-    if(cb4_runs===4||cb4_runs===6){cbdCount++}
-    if(cb5_runs===4||cb5_runs===6){cbdCount++}
-    if(cb6_runs===4||cb6_runs===6){cbdCount++}
+    if(cb1_runs==='4'||cb1_runs==='6'){cbdCount++}
+    if(cb2_runs==='4'||cb2_runs==='6'){cbdCount++}
+    if(cb3_runs==='4'||cb3_runs==='6'){cbdCount++}
+    if(cb4_runs==='4'||cb4_runs==='6'){cbdCount++}
+    if(cb5_runs==='4'||cb5_runs==='6'){cbdCount++}
+    if(cb6_runs==='4'||cb6_runs==='6'){cbdCount++}
 
     if(ubdCount>cbdCount){
         winner='user';

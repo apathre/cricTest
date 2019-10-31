@@ -11,59 +11,21 @@ exports.post=(req,res)=>{
     'https://i.ibb.co/wK97KPr/The-Toss-594x360.jpg'
 
   ]
-  
-
 
   if(tossRes===0){
    let tossText1=`${req.body.first_name} lost the Toss`;
          res.send({
            "set_attributes":{
                             "tossWon":0
-                            },
-            "messages": [
-                              {
-                                "attachment":{
-                                  "type":"template",
-                                  "payload":{
-                                    "template_type":"generic",
-                                    "image_aspect_ratio": "square",
-                                    "elements":[
-                                      {
-                                        "title":tossText1,
-                                        "image_url":tossArr[sms.random(4,0)]
-                                        
-                                      }
-                                    ]
-                                  }
-                                }
-                              }
-                            ]
-                      });
+                            }
+                                });
   }
   else{
     let tossText2=`${req.body.first_name} won the Toss`;
           res.send({
            "set_attributes":{
                             "tossWon":1
-                            },
-                "messages": [
-                              {
-                                "attachment":{
-                                  "type":"template",
-                                  "payload":{
-                                    "template_type":"generic",
-                                    "image_aspect_ratio": "square",
-                                    "elements":[
-                                      {
-                                        "title":tossText2,
-                                        "image_url":tossArr[sms.random(4,0)]
-                                        
-                                      }
-                                    ]
-                                  }
-                                }
-                              }
-                            ]
+                            }
                });
     }
 }

@@ -50,13 +50,10 @@ exports.post=(req,res)=>{
     bStrengthNo=fns.bStrengthNo(bowling,ub1,ub2,ub1_recon,ub2_recon);
   }
   //Identifying whether he hit the ball ot not
-  console.log('strike:',strike,'bStyle:',bStyle,'cp1_sRate:',cp1_sRate);
-  let hitOrNot=(strike===cp1)?fns.hitOrNot(bStyle,cp1_sRate,cp1_fRate):
-  (strike===cp2)?fns.hitOrNot(bStyle,cp2_sRate,cp2_fRate):fns.hitOrNot(bStyle,cp3_sRate,cp3_fRate);
+ 
+  let hitOrNot=(strike===cp1)?fns.hitOrNot(bStyle,cp1_sRate,cp1_fRate,pitch_type):
+  (strike===cp2)?fns.hitOrNot(bStyle,cp2_sRate,cp2_fRate,pitch_type):fns.hitOrNot(bStyle,cp3_sRate,cp3_fRate,pitch_type);
   
-  if(pitch_type==='green'){
-    hitOrNot=hitOrNot+20;
-  }
   if(hitOrNot){
       //identify which shot to play  
       shotNo=fns.shotType(conf);
