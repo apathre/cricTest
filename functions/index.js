@@ -25,6 +25,8 @@ const getStadium=require('./routes/getStadium');
 const updateGameNo=require('./routes/updateGameNo');
 const checkInProgress=require('./routes/checkInProgress');
 const updateData=require('./routes/updateData');
+const groza=require('./routes/groza');
+const getLink=require('./routes/getLink');
 
 //Defining batting variables
 const allocateTeam=require('./routes/allocateTeam.js');
@@ -63,6 +65,9 @@ app.post('/getStadium',getStadium.post);
 app.post('/updateGameNo',updateGameNo.post);
 app.post('/checkInProgress',checkInProgress.post);
 app.post('/updateData',updateData.post);
+app.post('/groza/:id?',groza.post);
+app.post('/getLink',getLink.post);
+
 
 //routes batting
 app.post('/allocateTeam',allocateTeam.post);

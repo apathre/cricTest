@@ -5,7 +5,7 @@ let db=admin.firestore();
 
 exports.post=(req,res)=>{
 
-    var coin=req.body.bet;
+    var coin=parseInt(req.body.bet);
     var newCoins=0;
     var tResult='failed';
     let data={
@@ -17,7 +17,7 @@ exports.post=(req,res)=>{
         .then(doc => {
             tResult='success';
             if(doc.data().coins>coin){
-                newCoins = doc.data().coins - coin;
+                newCoins = parseInt(doc.data().coins - coin);
                 t.update(userRef, {coins: newCoins});
                 res.send({
                     "set_attributes":{

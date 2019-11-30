@@ -5,7 +5,7 @@ let db=admin.firestore();
 
 exports.post=(req,res)=>{
     var coin=1000;
-    var tResult='failed';
+    
     let data={
         messenger_id:req.body['messenger user id']
     }
@@ -13,15 +13,13 @@ exports.post=(req,res)=>{
     let transaction = db.runTransaction(t => {
     return t.get(userRef)
         .then(doc => {
-        let newCoins = doc.data().coins - coin;
+        let newCoins = parseInt(doc.data().coins - coin);
             t.update(userRef, {coins: newCoins});
             return 0;
     }).then(result => {
     console.log('Transaction success1000', result);
-    tResult='success';
     res.send({
         "set_attributes":{
-            "deducted1000":tResult,
             "coins":newCoins
         },
         "messages":[
@@ -31,10 +29,9 @@ exports.post=(req,res)=>{
     return 0;
     }).catch(err => {
     console.log('Transaction failure1000:', err);
-    tResult='failed';
+ 
     res.send({
         "set_attributes":{
-            "deducted1000":tResult,
             "coins":newCoins
         },
         "messages":[
