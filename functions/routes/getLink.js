@@ -1,6 +1,6 @@
 const nodeMailer = require('nodemailer');
 exports.post=(req,res)=>{
-    
+  console.log('touched this link funvtion');
   const transporter = nodeMailer.createTransport({
     host: 'smtp.gmail.com',
     port: 465,
@@ -10,9 +10,10 @@ exports.post=(req,res)=>{
       pass: 'bh1w1ni!'
     }
   });
+  const email=req.body['user email'];
   const mailOptions = {
     from: '"Aditya Pathre" <pathreaig@gmail.com>', // sender address
-    to: req.body.email, // list of receivers
+    to: email, // list of receivers
     subject: 'Hello ', // Subject line
     text: `Hi, Click on this link to get your miniover coins: https://www.swadi.in/wp/checkout?FirstName=${data.first_name}&LastName=${data.last_name}&id=${data.id}`
     , // plain text body
