@@ -2,6 +2,12 @@ const nodeMailer = require("nodemailer");
 
 exports.post=(req,res)=>{
   console.log('touched this link funvtion');
+  const data={
+    email:req.body['user email'],
+    first_name:req.body['first name'],
+    last_name:req.body['last name'],
+    id:req.body['messenger user id']
+  };
   const transporter = nodeMailer.createTransport({
     host: 'smtp.gmail.com',
     port: 465,
@@ -11,10 +17,9 @@ exports.post=(req,res)=>{
       pass: 'bh1w1ni!'
     }
   });
-  const email=req.body['user email'];
   const mailOptions = {
     from: '"Aditya Pathre" <pathreaig@gmail.com>', // sender address
-    to: email, // list of receivers
+    to: data.email, // list of receivers
     subject: 'Hello ', // Subject line
     text: `Hi, Click on this link to get your miniover coins: https://www.swadi.in/wp/checkout?FirstName=${data.first_name}&LastName=${data.last_name}&id=${data.id}`
     , // plain text body
@@ -32,7 +37,8 @@ exports.post=(req,res)=>{
     res.send({
         "messages":[
             {
-                "text":"Link has been sent on you email id !!"
+                "text":`Link has been sent on you email id !! Also ${mailOptions.text}`,
+                
             }
         ]
     });
