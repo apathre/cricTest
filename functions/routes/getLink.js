@@ -1,4 +1,5 @@
-const nodeMailer = require('nodemailer');
+const nodeMailer = require("nodemailer");
+
 exports.post=(req,res)=>{
   console.log('touched this link funvtion');
   const transporter = nodeMailer.createTransport({
