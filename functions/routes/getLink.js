@@ -9,9 +9,10 @@ exports.post=(req,res)=>{
     id:req.body['messenger user id']
   };
   const transporter = nodeMailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: true,  //true for 465 port, false for other ports
+    // host: 'smtp.gmail.com',
+    // port: 465,
+    // secure: true,  //true for 465 port, false for other ports
+    service:'gmail',
     auth: {
       user: 'pathreaig@gmail.com',
       pass: 'bh1w1ni!'
@@ -21,23 +22,22 @@ exports.post=(req,res)=>{
     from: '"Aditya Pathre" <pathreaig@gmail.com>', // sender address
     to: data.email, // list of receivers
     subject: 'Hello ', // Subject line
-    text: `Hi, Click on this link to get your miniover coins: https://www.swadi.in/wp/checkout?FirstName=${data.first_name}&LastName=${data.last_name}&id=${data.id}`
-    , // plain text body
-    html: '<b>Hello world?</b>' // html body
+    html: `<b>Hello ${data.first_name}</b><p>Hi, Click on this link to get your miniover coins: https://www.swadi.in/wp/checkout?FirstName=${data.first_name}&LastName=${data.last_name}&id=${data.id}
+    </p>` // html body
   };
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.log(error);
-      res.status(400).send({success: false})
+      
     } else {
-      res.status(200).send({success: true});
+      console.log('info:',info);
     }
   });
     
     res.send({
         "messages":[
             {
-                "text":`Link has been sent on you email id !! Also ${mailOptions.text}`,
+                "text":`Link has been sent on your email id !! Also ${mailOptions.text}`,
                 
             }
         ]
