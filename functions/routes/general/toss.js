@@ -1,5 +1,5 @@
-const fns=require('./../Data/shotMatrix');
-const sms=require('./../Data/random');
+const fns=require('../../Data/shotMatrix');
+const sms=require('../../Data/random');
 
 exports.post=(req,res)=>{
   var tossRes=Math.round(Math.random());

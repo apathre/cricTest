@@ -1,5 +1,6 @@
 const functions =require('firebase-functions');
 const admin=require('firebase-admin');
+const {google} = require('googleapis');
 
 admin.initializeApp(functions.config().firebase);
 
@@ -11,25 +12,25 @@ const app = express();
 
 
 //Defining match variables
-const createUser=require('./routes/createUser');
-const toss=require('./routes/toss.js');
-const compDecideToss=require('./routes/compDecideToss.js');
-const checkWinner=require('./routes/checkWinner');
-const deductHundred=require('./routes/deductHundred');
-const deductThousand=require('./routes/deductThousand');
-const updateWin=require('./routes/updateWin');
+const createUser=require('./routes/general/createUser');
+const toss=require('./routes/general/toss');
+const compDecideToss=require('./routes/general/compDecideToss');
+const checkWinner=require('./routes/general/checkWinner');
+const deductHundred=require('./routes/general/deductHundred');
+const deductThousand=require('./routes/general/deductThousand');
+const updateWin=require('./routes/general/updateWin');
 const updateDraw=require('./routes/batting/updateDraw');
-const addCoins=require('./routes/addCoins');
-const updateRatio=require('./routes/updateRatio');
-const getStadium=require('./routes/getStadium');
-const updateGameNo=require('./routes/updateGameNo');
-const checkInProgress=require('./routes/checkInProgress');
-const updateData=require('./routes/updateData');
-const groza=require('./routes/groza');
-const getLink=require('./routes/getLink');
+const addCoins=require('./routes/general/addCoins');
+const updateRatio=require('./routes/general/updateRatio');
+const getStadium=require('./routes/general/getStadium');
+const updateGameNo=require('./routes/general/updateGameNo');
+const checkInProgress=require('./routes/general/checkInProgress');
+const updateData=require('./routes/general/updateData');
+const groza=require('./routes/general/groza');
+const getLink=require('./routes/general/getLink');
 
 //Defining batting variables
-const allocateTeam=require('./routes/allocateTeam.js');
+const allocateTeam=require('./routes/general/allocateTeam');
 const updateScore=require('./routes/batting/updateScore');
 const updateConfidence=require('./routes/batting/updateConfidence');
 const initializeAttributes=require('./routes/batting/initializeAttributes');
@@ -46,6 +47,10 @@ const updateBConfidence=require('./routesBowling/updateBConfidence');
 const updateBStatus=require('./routesBowling/updateBStatus');
 const checkBowling=require('./routesBowling/checkBowling');
 const checkBPlayers=require('./routesBowling/checkBPlayers');
+
+//Defining miniover variables
+const quizList=require('./routes/miniover/quizList');
+
 
 //routes
 app.get('/abc',(req,res)=>{
@@ -87,6 +92,13 @@ app.post('/updateBConfidence',updateBConfidence.post);
 app.post('/updateBStatus',updateBStatus.post);
 app.post('/checkBowling',checkBowling.post);
 app.post('/checkBPlayers',checkBPlayers.post);
+
+//routes miniOver
+app.post('/quizList',quizList.post);
+
+
+
+
 
 
 exports.app = functions.https.onRequest(app);
